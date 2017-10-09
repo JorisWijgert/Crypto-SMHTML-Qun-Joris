@@ -25,7 +25,11 @@ SECRET_KEY = '&rao*7=ejviju&=2gseg@r#bsl&lnzn+q(!#jp%f))hsgltp93'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+<<<<<<< HEAD
 ALLOWED_HOSTS = ['192.168.230.128','0.0.0.0','127.0.0.1','xx.xx.xx.xx']
+=======
+ALLOWED_HOSTS = ['0.0.0.0', 'xx.xx.xx.xx', '192.168.227.128']
+>>>>>>> 8fa561741c0889bc1336005a1f10e502af915162
 
 
 # Application definition
@@ -81,6 +85,13 @@ DATABASES = {
     }
 }
 
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
