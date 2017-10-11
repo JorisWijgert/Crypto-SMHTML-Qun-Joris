@@ -6,6 +6,13 @@ namespace CryptoBackEnd.Models
 
     public class DataModel : DbContext
     {
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<User>().HasMany(u => u.NotificationSettings).WithMany();
+            modelBuilder.Entity<User>().HasMany(u => u.UserValutas).WithMany();
+            modelBuilder.Entity<User>().HasMany(u => u.UserGraphs).WithMany();
+        }
+
         // Your context has been configured to use a 'DataModel' connection string from your application's 
         // configuration file (App.config or Web.config). By default, this connection string targets the 
         // 'CryptoBackEnd.Models.DataModel' database on your LocalDb instance. 

@@ -17,9 +17,10 @@ namespace CryptoBackEnd.Controllers
         private DataModel db = new DataModel();
 
         // GET: api/Users
-        public IQueryable<User> GetUser()
+        public List<User> GetUser()
         {
-            return db.User;
+            List<User> users = db.User.ToList();
+            return users;
         }
 
         // GET: api/Users/5
