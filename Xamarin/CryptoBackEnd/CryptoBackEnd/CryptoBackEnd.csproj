@@ -115,10 +115,15 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\NotificationSettingsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Controllers\UserValutasController.cs" />
+    <Compile Include="Controllers\ValutasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="JsonInputs\NotificationSettingJson.cs" />
+    <Compile Include="JsonInputs\UserValutaJson.cs" />
     <Compile Include="Models\DataModel.cs" />
     <Compile Include="Models\Graph.cs" />
     <Compile Include="Models\NotificationSetting.cs" />
