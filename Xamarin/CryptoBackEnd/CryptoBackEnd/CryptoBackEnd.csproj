@@ -23,6 +23,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -116,16 +117,20 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\NotificationSettingsController.cs" />
+    <Compile Include="Controllers\UserGraphsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\UserValutasController.cs" />
     <Compile Include="Controllers\ValutasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="JSONData\HistoricalValutaHours.cs" />
     <Compile Include="JsonInputs\NotificationSettingJson.cs" />
+    <Compile Include="JsonInputs\UserGraphsJson.cs" />
     <Compile Include="JsonInputs\UserValutaJson.cs" />
     <Compile Include="Models\DataModel.cs" />
     <Compile Include="Models\Graph.cs" />
+    <Compile Include="Models\GraphData.cs" />
     <Compile Include="Models\NotificationSetting.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserGraph.cs" />
