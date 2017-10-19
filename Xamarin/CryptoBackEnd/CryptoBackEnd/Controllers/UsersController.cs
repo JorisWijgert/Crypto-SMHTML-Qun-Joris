@@ -9,11 +9,16 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using CryptoBackEnd.Models;
+using System.Net.Http.Headers;
+using Newtonsoft.Json;
+using CryptoBackEnd.JSONData;
+using System.Threading.Tasks;
 
 namespace CryptoBackEnd.Controllers
 {
     public class UsersController : ApiController
     {
+        private const string URL = "https://min-api.cryptocompare.com/data/";
         private DataModel db = new DataModel();
 
         // GET: api/Users
@@ -25,50 +30,37 @@ namespace CryptoBackEnd.Controllers
 
         // GET: api/Users/5
         [ResponseType(typeof(User))]
-        public IHttpActionResult GetUser(int id)
+        public async Task<IHttpActionResult> GetUserAsync(int id)
         {
             User user = db.User.Find(id);
             if (user == null)
             {
                 return NotFound();
             }
+            await GetGraphData(user);
 
             return Ok(user);
         }
 
-        // PUT: api/Users/5
-        [ResponseType(typeof(void))]
-        public IHttpActionResult PutUser(int id, User user)
+        private async Task GetGraphData(User user)
         {
-            if (!ModelState.IsValid)
+            List<HistoricalValutaHours.Rootobject> cryptodataList = new List<HistoricalValutaHours.Rootobject>();
+            var httpClient = new HttpClient();
+            List<Valuta> valutas = db.Valuta.ToList();
+            foreach (Valuta valuta in valutas)
             {
-                return BadRequest(ModelState);
-            }
+                var json = await httpClient.GetStringAsync($"{URL}histohour?fsym={valuta.ShortName}&tsym=USD&limit=30");
+                HistoricalValutaHours.Rootobject valutaHours = JsonConvert.DeserializeObject<HistoricalValutaHours.Rootobject>(json);
 
-            if (id != user.Id)
-            {
-                return BadRequest();
-            }
-
-            db.Entry(user).State = EntityState.Modified;
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!UserExists(id))
+                Graph graph = new Graph { Name = $"{valuta.Name} {user.Username}", Valuta = valuta };
+                foreach (HistoricalValutaHours.Datum datum in valutaHours.Data)
                 {
-                    return NotFound();
+                    GraphData graphData = new GraphData { Low = datum.low, High = datum.high, Open = datum.open, TimeStamp = datum.time };
+                    graph.graphData.Add(graphData);
                 }
-                else
-                {
-                    throw;
-                }
+                UserGraph userGraph = new UserGraph { Favourite = false, Graph = graph };
+                user.UserGraphs.Add(userGraph);
             }
-
-            return StatusCode(HttpStatusCode.NoContent);
         }
 
         // POST: api/Users
@@ -84,22 +76,6 @@ namespace CryptoBackEnd.Controllers
             db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = user.Id }, user);
-        }
-
-        // DELETE: api/Users/5
-        [ResponseType(typeof(User))]
-        public IHttpActionResult DeleteUser(int id)
-        {
-            User user = db.User.Find(id);
-            if (user == null)
-            {
-                return NotFound();
-            }
-
-            db.User.Remove(user);
-            db.SaveChanges();
-
-            return Ok(user);
         }
 
         protected override void Dispose(bool disposing)
