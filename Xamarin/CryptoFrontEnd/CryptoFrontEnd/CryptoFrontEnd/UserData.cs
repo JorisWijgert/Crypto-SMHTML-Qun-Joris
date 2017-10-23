@@ -8,6 +8,7 @@ namespace CryptoFrontEnd
 {
     class UserData
     {
+
         public class Rootobject
         {
             public Notificationsetting[] NotificationSettings { get; set; }
@@ -22,7 +23,7 @@ namespace CryptoFrontEnd
         {
             public Valuta Valuta { get; set; }
             public int Id { get; set; }
-            public int TargetAmount { get; set; }
+            public float TargetAmount { get; set; }
             public bool Push { get; set; }
         }
 
@@ -31,7 +32,7 @@ namespace CryptoFrontEnd
             public int Id { get; set; }
             public string Name { get; set; }
             public string ShortName { get; set; }
-            public int CurrentPrice { get; set; }
+            public float CurrentPrice { get; set; }
         }
 
         public class Usergraph
@@ -45,16 +46,8 @@ namespace CryptoFrontEnd
         {
             public int Id { get; set; }
             public string Name { get; set; }
-            public Valuta1 Valuta { get; set; }
+            public Valuta Valuta { get; set; }
             public Graphdata[] graphData { get; set; }
-        }
-
-        public class Valuta1
-        {
-            public int Id { get; set; }
-            public string Name { get; set; }
-            public string ShortName { get; set; }
-            public int CurrentPrice { get; set; }
         }
 
         public class Graphdata
@@ -68,18 +61,10 @@ namespace CryptoFrontEnd
 
         public class Uservaluta
         {
-            public Valuta2 Valuta { get; set; }
+            public Valuta Valuta { get; set; }
             public int Id { get; set; }
-            public int Amount { get; set; }
-            public int PurchasePrice { get; set; }
-        }
-
-        public class Valuta2
-        {
-            public int Id { get; set; }
-            public string Name { get; set; }
-            public string ShortName { get; set; }
-            public int CurrentPrice { get; set; }
+            public float Amount { get; set; }
+            public float PurchasePrice { get; set; }
         }
 
     }
