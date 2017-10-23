@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoFrontEnd.Android", "CryptoFrontEnd\CryptoFrontEnd.Android\CryptoFrontEnd.Android.csproj", "{D811D276-9329-4474-ADB8-F8523679D995}"
 EndProject
@@ -196,6 +196,7 @@ Global
 		{7EA690F7-3A10-42E7-99B2-55AB565C81A2}.AppStore|x86.Build.0 = Release|x86
 		{7EA690F7-3A10-42E7-99B2-55AB565C81A2}.AppStore|x86.Deploy.0 = Release|x86
 		{7EA690F7-3A10-42E7-99B2-55AB565C81A2}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{7EA690F7-3A10-42E7-99B2-55AB565C81A2}.Debug|Any CPU.Deploy.0 = Debug|x86
 		{7EA690F7-3A10-42E7-99B2-55AB565C81A2}.Debug|ARM.ActiveCfg = Debug|ARM
 		{7EA690F7-3A10-42E7-99B2-55AB565C81A2}.Debug|ARM.Build.0 = Debug|ARM
 		{7EA690F7-3A10-42E7-99B2-55AB565C81A2}.Debug|ARM.Deploy.0 = Debug|ARM
