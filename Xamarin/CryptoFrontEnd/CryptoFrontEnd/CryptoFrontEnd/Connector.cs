@@ -27,6 +27,17 @@ namespace CryptoFrontEnd
             return data;
         }
 
-       
+        public static async Task<UserData.Uservaluta[]> GetValutas(int userId)
+        {
+            string api = $"https://i329146.venus.fhict.nl/api/users/{userId}";
+            HttpClient httpClient = new HttpClient();
+            var responseText = await httpClient.GetStringAsync(api);
+            UserData.Rootobject data = JsonConvert.DeserializeObject<UserData.Rootobject>(responseText);
+
+
+            return data.UserValutas;
+        }
+
+
     }
 }
