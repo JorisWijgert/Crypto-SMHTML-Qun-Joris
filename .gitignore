@@ -259,3 +259,4 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/Xamarin/CryptoFrontEnd/CryptoFrontEnd/CryptoFrontEnd.Android/CryptoFrontEnd.Android.csproj.bak
