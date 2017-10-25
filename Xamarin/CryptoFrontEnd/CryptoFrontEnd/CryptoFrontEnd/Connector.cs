@@ -10,23 +10,18 @@ namespace CryptoFrontEnd
 {
     public class Connector
     {
-        public HttpClient httpClient { get; set; }
 
-        public Connector()
-        {
-            httpClient = new HttpClient();
-        }
-
-
-        public async Task<UserData.Rootobject> getSpecficUserAPIAsync(string userID) {
-            string api = "https://i329146.venus.fhict.nl/api/users/" + userID;
+        public static async Task<UserData.Rootobject> GetSpecficUserAPIAsync(int userId) {
+            string api = $"https://i329146.venus.fhict.nl/api/users/{userId}";
+            HttpClient httpClient = new HttpClient();
             var responseText = await httpClient.GetStringAsync(api);
             UserData.Rootobject data = JsonConvert.DeserializeObject<UserData.Rootobject>(responseText);
             return data;
         }
 
-        public async Task<UserData.Rootobject[]> getUsersAsync() {
+        public static async Task<UserData.Rootobject[]> GetUsersAsync() {
             string api =  "https://i329146.venus.fhict.nl/api/users";
+            HttpClient httpClient = new HttpClient();
             var responseText = await httpClient.GetStringAsync(api);
             UserData.Rootobject[] data = JsonConvert.DeserializeObject<UserData.Rootobject[]>(responseText);
             return data;
