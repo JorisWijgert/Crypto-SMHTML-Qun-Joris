@@ -24,7 +24,7 @@ namespace CryptoFrontEnd
             InitializeComponent();
         }
 
-        public async void LoginUser()
+        protected async void LoginUser()
         {
             if (String.IsNullOrWhiteSpace(unEntry.Text) || String.IsNullOrWhiteSpace(pwEntry.Text))
             {
@@ -33,7 +33,7 @@ namespace CryptoFrontEnd
                 return;
             }
 
-            UserData.Rootobject loggedinUser = null;
+            UserData.Rootobject loggedinUser = new UserData.Rootobject();
 
             try
             {
@@ -46,17 +46,19 @@ namespace CryptoFrontEnd
                 return;
             }
 
-            var graphPage = new ContentPage
-            {
-                Title = loggedinUser.Username,
-                Content = new PlotView
-                {
-                    Model = CreatePlotModel(loggedinUser),
-                    VerticalOptions = LayoutOptions.Fill,
-                    HorizontalOptions = LayoutOptions.Fill,
-                },
-            };
-            await Navigation.PushAsync(graphPage);
+            Application.Current.Properties["user"] = loggedinUser;
+
+            //var graphPage = new ContentPage
+            //{
+            //    Title = loggedinUser.Username,
+            //    Content = new PlotView
+            //    {
+            //        Model = CreatePlotModel(loggedinUser),
+            //        VerticalOptions = LayoutOptions.Fill,
+            //        HorizontalOptions = LayoutOptions.Fill,
+            //    },
+            //};
+            await Navigation.PushAsync(new StartPage());
 
 
         }

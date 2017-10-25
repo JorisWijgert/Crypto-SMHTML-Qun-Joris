@@ -4,7 +4,28 @@
              x:Class="CryptoFrontEnd.StartPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin Forms!" />
+            <ListView x:Name="ValutaListView"
+            HasUnevenRows="True"
+            ItemTapped="ValutaListView_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical"
+                         Padding="10">
+                                <Label Text="{Binding Amount}"
+                     FontSize="Default"
+                     TextColor="Black"/>
+                                <Label Text="{Binding Amount}"
+                     FontSize="Default"
+                     TextColor="Black"/>
+                                <Label Text="{Binding Amount}"
+                     FontSize="Default"
+                     TextColor="Black"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

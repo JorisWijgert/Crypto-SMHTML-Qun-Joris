@@ -15,6 +15,18 @@ namespace CryptoFrontEnd
         public StartPage()
         {
             InitializeComponent();
+            FillValutaList();
         }
+
+        private void ValutaListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+
+        }
+
+        private void FillValutaList()
+        {
+            UserData.Rootobject user = (UserData.Rootobject) Application.Current.Properties["user"];
+            ValutaListView.ItemsSource = user.UserValutas;
+        } 
     }
 }
