@@ -19,9 +19,11 @@ namespace CryptoFrontEnd
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Login : ContentPage
     {
+        public Connector connector;
         public Login()
         {
             InitializeComponent();
+            connector = new Connector();
         }
 
         public async void LoginUser()
@@ -63,10 +65,7 @@ namespace CryptoFrontEnd
 
         private async Task<UserData.Rootobject> FetchAndCheckUser(string username, string password)
         {
-            string API = "https://i329146.venus.fhict.nl/api/users";
-            var httpClient = new HttpClient();
-            var responseText = await httpClient.GetStringAsync(API);
-            UserData.Rootobject[] data = JsonConvert.DeserializeObject<UserData.Rootobject[]>(responseText);
+            UserData.Rootobject[] data = await connector.getUsersAsync();
             foreach (UserData.Rootobject user in data)
             {
                 if (user.Username.Equals(username) && user.Password.Equals(password))
@@ -88,7 +87,7 @@ namespace CryptoFrontEnd
 
         public PlotModel CreatePlotModel(UserData.Rootobject loggedinUser)
         {
-            UserData.Rootobject userData = Task.Run(FetchUserData).Result;
+            UserData.Rootobject userData = connector.getSpecficUserAPIAsync(loggedinUser.Id.ToString()).Result;
             var plotModel = new PlotModel { Title = $"{loggedinUser.Username} Bitcoin" };
 
             plotModel.Axes.Add(new LinearAxis { Position = AxisPosition.Left });
