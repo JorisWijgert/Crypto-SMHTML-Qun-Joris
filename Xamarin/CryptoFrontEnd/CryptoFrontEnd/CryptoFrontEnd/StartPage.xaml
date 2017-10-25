@@ -10,17 +10,20 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Orientation="Vertical"
-                         Padding="10">
-                                <Label Text="{Binding Amount}"
-                     FontSize="Default"
-                     TextColor="Black"/>
-                                <Label Text="{Binding Amount}"
-                     FontSize="Default"
-                     TextColor="Black"/>
-                                <Label Text="{Binding Amount}"
-                     FontSize="Default"
-                     TextColor="Black"/>
+                            <StackLayout Orientation="Vertical" Padding="5,10">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Valuta.Name}" FontSize="Large" FontAttributes="Bold" TextColor="Black"/>
+                                    <Label Text="{Binding Valuta.ShortName}" FontSize="Large" FontAttributes="Italic" TextColor="DarkGray"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Purchase price:" FontSize="Default" FontAttributes="Bold" TextColor="Black"/>
+                                    <Label Text="{Binding PurchasePrice}" FontSize="Default" TextColor="Black"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Current Price:" FontSize="Default" FontAttributes="Bold" TextColor="Black"/>
+                                    <Label Text="{Binding Valuta.CurrentPrice}" FontSize="Default" TextColor="Black"/>
+                                </StackLayout>
+                                
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
