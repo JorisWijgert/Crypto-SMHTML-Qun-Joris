@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CryptoFrontEnd.Login"
+             xmlns:forms="using:Xamarin.Forms.Platform.UWP"
+             >
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <Entry x:Name="unEntry"
+           FontSize="Default"
+           Placeholder="Username"
+                   VerticalOptions="Center"
+                   Margin="20"
+                   />
+            <Entry x:Name="pwEntry"
+           FontSize="Default"
+                   IsPassword="True"
+           Placeholder="Password"
+                   VerticalOptions="Center"
+                   Margin="20"
+                   />
+            <Button Text="Login"
+            FontSize="Default"
+            TextColor="White"
+            BackgroundColor="Teal"
+                    VerticalOptions="Center"
+                    Margin="20"
+                    Clicked="LoginUser"
+            />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
