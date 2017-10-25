@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CryptoFrontEnd
 {
-    class UserData
+    public class UserData
     {
 
         public class Rootobject

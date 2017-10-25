@@ -26,20 +26,53 @@ namespace CryptoFrontEnd
 
         public async void LoginUser()
         {
+            if (String.IsNullOrWhiteSpace(unEntry.Text) || String.IsNullOrWhiteSpace(pwEntry.Text))
+            {
+                lblError.Text = "Password or username is empty.";
+                lblError.IsVisible = true;
+                return;
+            }
+
+            UserData.Rootobject loggedinUser = null;
+
+            try
+            {
+                loggedinUser = await FetchAndCheckUser(unEntry.Text, pwEntry.Text);   
+            }
+            catch (ArgumentException ex)
+            {
+                lblError.Text = ex.Message;
+                lblError.IsVisible = true;
+                return;
+            }
 
             var graphPage = new ContentPage
             {
-                Title = "30 uur Bitcoin",
+                Title = loggedinUser.Username,
                 Content = new PlotView
                 {
-                    Model = CreatePlotModel(),
+                    Model = CreatePlotModel(loggedinUser),
                     VerticalOptions = LayoutOptions.Fill,
                     HorizontalOptions = LayoutOptions.Fill,
                 },
             };
-
             await Navigation.PushAsync(graphPage);
 
+
+        }
+
+        private async Task<UserData.Rootobject> FetchAndCheckUser(string username, string password)
+        {
+            string API = "https://i329146.venus.fhict.nl/api/users";
+            var httpClient = new HttpClient();
+            var responseText = await httpClient.GetStringAsync(API);
+            UserData.Rootobject[] data = JsonConvert.DeserializeObject<UserData.Rootobject[]>(responseText);
+            foreach (UserData.Rootobject user in data)
+            {
+                if (user.Username.Equals(username) && user.Password.Equals(password))
+                    return user;
+            }
+            throw new ArgumentException("Username or password is incorrect.");
         }
 
         // Gets weather data from the passed URL.
@@ -53,10 +86,10 @@ namespace CryptoFrontEnd
 
         }
 
-        public PlotModel CreatePlotModel()
+        public PlotModel CreatePlotModel(UserData.Rootobject loggedinUser)
         {
             UserData.Rootobject userData = Task.Run(FetchUserData).Result;
-            var plotModel = new PlotModel { Title = "OxyPlot Demo" };
+            var plotModel = new PlotModel { Title = $"{loggedinUser.Username} Bitcoin" };
 
             plotModel.Axes.Add(new LinearAxis { Position = AxisPosition.Left });
             plotModel.Axes.Add(new DateTimeAxis

@@ -27,6 +27,8 @@
                     Margin="20"
                     Clicked="LoginUser"
             />
+            <Label x:Name="lblError"
+                   IsVisible="False"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
