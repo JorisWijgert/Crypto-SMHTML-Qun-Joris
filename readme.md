@@ -1,3 +1,3 @@
 Prachtig
 
-Met lelijke django
+Zonder lelijke django
