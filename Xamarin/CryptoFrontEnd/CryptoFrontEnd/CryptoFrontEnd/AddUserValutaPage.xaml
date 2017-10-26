@@ -4,7 +4,11 @@
              x:Class="CryptoFrontEnd.AddUserValutaPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin Forms!" />
+            <Picker x:Name="CurrencyPicker" WidthRequest="1000"  Title="Choose a currency:" SelectedIndex="{Binding Industry}" HorizontalOptions="Center" Margin="30"/>
+            <Entry x:Name="priceEntry" WidthRequest="1000" FontSize="Default" HorizontalOptions="Center" Placeholder="Price" Keyboard="Numeric" />
+            <Entry x:Name="amountEntry" WidthRequest="1000" FontSize="Default" HorizontalOptions="Center" Placeholder="Amount" Keyboard="Numeric" />
+            <Button Text="Add" x:Name="btnAdd" WidthRequest="1000" Clicked="btnAdd_Clicked" HorizontalOptions="Center"/>
+            <Label x:Name="lblError" WidthRequest="1000" HorizontalOptions="Center" IsVisible="False"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

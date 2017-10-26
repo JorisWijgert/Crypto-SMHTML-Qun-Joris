@@ -34,6 +34,11 @@ namespace CryptoFrontEnd
             public string Name { get; set; }
             public string ShortName { get; set; }
             public float CurrentPrice { get; set; }
+
+            public override string ToString()
+            {
+                return Name;
+            }
         }
 
         public class Usergraph

@@ -197,7 +197,10 @@ namespace CryptoFrontEnd
             return plotModel;
         }
 
-
+        protected override void OnAppearing()
+        {
+            FillValutaList();
+        }
         public static DateTime UnixTimeStampToDateTime(double unixTimeStamp)
         {
             // Unix timestamp is seconds past epoch
