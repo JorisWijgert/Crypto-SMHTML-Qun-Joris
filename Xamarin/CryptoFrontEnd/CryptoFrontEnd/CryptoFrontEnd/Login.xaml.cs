@@ -37,7 +37,7 @@ namespace CryptoFrontEnd
 
             try
             {
-                loggedinUser = await FetchAndCheckUser(unEntry.Text, pwEntry.Text);   
+                loggedinUser = await FetchAndCheckUser(unEntry.Text, pwEntry.Text);
             }
             catch (ArgumentException ex)
             {
@@ -54,9 +54,35 @@ namespace CryptoFrontEnd
 
             StartPage startpage = new StartPage();
             startpage.Title = $"Valutas of {loggedinUser.Username}";
-            await Navigation.PushAsync(startpage);
+            await ReplaceRoot(startpage);
 
 
+        }
+        private NavigationPage _currentNavigationPage
+        {
+            get
+            {
+                return ((App)Application.Current).MainPage as NavigationPage;
+            }
+        }
+
+        async Task ReplaceRoot(Page page)
+        {
+            var root = _currentNavigationPage.Navigation.NavigationStack[0];
+            _currentNavigationPage.Navigation.InsertPageBefore(page, root);
+            await PopToRootAsync();
+        }
+
+        public async Task PopToRootAsync()
+        {
+            while (_currentNavigationPage.Navigation.ModalStack.Count > 0)
+            {
+                await _currentNavigationPage.Navigation.PopModalAsync(false);
+            }
+            while (_currentNavigationPage.CurrentPage != _currentNavigationPage.Navigation.NavigationStack[0])
+            {
+                await _currentNavigationPage.PopAsync(false);
+            }
         }
 
         private async Task<UserData.Rootobject> FetchAndCheckUser(string username, string password)

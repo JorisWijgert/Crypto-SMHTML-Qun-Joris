@@ -19,10 +19,20 @@ namespace CryptoFrontEnd
         {
             InitializeComponent();
 
-            ContentPage page = new CryptoFrontEnd.Login();
-            page.Title = "Crypto";
+            if (Application.Current.Properties.ContainsKey("userId") && (int)Application.Current.Properties["userId"] > 0)
+            {
+                UserData.Rootobject loggedinUser = Task.Run(() => Connector.GetSpecficUserAPIAsync((int)Application.Current.Properties["userId"])).Result;
 
-            MainPage = new NavigationPage(page);            
+                ContentPage page = new CryptoFrontEnd.StartPage();
+                page.Title = $"Valutas of {loggedinUser.Username}";
+                MainPage = new NavigationPage(page);
+            }
+            else
+            {
+                ContentPage page = new CryptoFrontEnd.Login();
+                page.Title = "Login";
+                MainPage = new NavigationPage(page);
+            }
         }      
 
         protected override void OnStart()

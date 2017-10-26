@@ -55,7 +55,7 @@ namespace CryptoBackEnd.Controllers
                 Graph graph = new Graph { Name = $"{valuta.Name} {user.Username}", Valuta = valuta };
                 foreach (HistoricalValutaHours.Datum datum in valutaHours.Data)
                 {
-                    GraphData graphData = new GraphData { Low = datum.low, High = datum.high, Open = datum.open, TimeStamp = datum.time };
+                    GraphData graphData = new GraphData { Low = datum.low, High = datum.high, Open = datum.open, Close = datum.close, TimeStamp = datum.time };
                     graph.graphData.Add(graphData);
                 }
                 UserGraph userGraph = new UserGraph { Favourite = false, Graph = graph };

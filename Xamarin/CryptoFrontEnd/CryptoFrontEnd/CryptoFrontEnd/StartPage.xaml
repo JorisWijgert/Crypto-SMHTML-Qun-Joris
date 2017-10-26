@@ -2,6 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CryptoFrontEnd.StartPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="AddGraph" Text="Add Graph" Icon="plus.png" Clicked="AddGraph_Clicked"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
             <ListView x:Name="ValutaListView"

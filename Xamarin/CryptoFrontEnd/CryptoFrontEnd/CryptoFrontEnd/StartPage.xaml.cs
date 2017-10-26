@@ -4,6 +4,7 @@ using OxyPlot.Series;
 using OxyPlot.Xamarin.Forms;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,24 +21,137 @@ namespace CryptoFrontEnd
         public StartPage()
         {
             InitializeComponent();
+
             FillValutaList();
         }
 
         private async Task ValutaListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             UserData.Rootobject user = await Connector.GetSpecficUserAPIAsync(userId);
-            var graphPage = new ContentPage
+            var graphPage = new TabbedPage
             {
-                Title = user.Username,
-                Content = new PlotView
+                Children =
                 {
-                    Model = CreatePlotModel(user, e.Item),
-                    VerticalOptions = LayoutOptions.Fill,
-                    HorizontalOptions = LayoutOptions.Fill,
+                    new ContentPage{
+                        Title = "CandlePlot",
+                        Content = new PlotView
+                        {
+                            Model = CreateCandlePlotModel(user, e.Item),
+                            VerticalOptions = LayoutOptions.Fill,
+                            HorizontalOptions = LayoutOptions.Fill,
+                        }
+                    },
+                    new ContentPage {
+                        Title = "LinearPlot",
+                        Content = new PlotView
+                        {
+                            Model = CreatePlotModel(user, e.Item),
+                            VerticalOptions = LayoutOptions.Fill,
+                            HorizontalOptions = LayoutOptions.Fill,
+                        },
+                    },
+                     new ContentPage{
+                        Title = "BarPlot",
+                        Content = new PlotView
+                        {
+                            Model = CreateBarPlotModel(user, e.Item),
+                            VerticalOptions = LayoutOptions.Fill,
+                            HorizontalOptions = LayoutOptions.Fill,
+                        }
+                    }
                 },
+                Title = "Graphs"
             };
 
             await Navigation.PushAsync(graphPage);
+        }
+
+        private PlotModel CreateCandlePlotModel(UserData.Rootobject user, object item)
+        {
+            var model = new PlotModel { Title = "CandleStickSeries"} ;
+
+           
+
+            var s1 = new CandleStickSeries()
+            {
+                Color = OxyColors.Black,
+            };
+            UserData.Uservaluta userValuta = (UserData.Uservaluta)item;
+            List<UserData.Graphdata> currencyList = Task.Run(() => GetCurrencyCrypto(userValuta.Id)).Result;
+            foreach (UserData.Graphdata dataPoint in currencyList)
+            {
+                s1.Items.Add(new HighLowItem(DateTimeAxis.ToDouble(UnixTimeStampToDateTime(dataPoint.TimeStamp)),dataPoint.High, dataPoint.Low, dataPoint.Open, dataPoint.Close));
+
+            }
+           
+            model.Series.Add(s1);
+            model.Axes.Add(new LinearAxis() { MaximumPadding = 0.3, MinimumPadding = 0.3 });
+            model.Axes.Add(new DateTimeAxis
+            {
+                Position = AxisPosition.Bottom,
+                MinorIntervalType = DateTimeIntervalType.Hours,
+                IntervalType = DateTimeIntervalType.Hours,
+                StringFormat = "HH-dd"
+            });
+
+            return model;
+        }
+
+        private PlotModel CreateBarPlotModel(UserData.Rootobject user, object item)
+        {
+            UserData.Uservaluta userValuta = (UserData.Uservaluta)item;
+            var model = new PlotModel { Title = "Currencies" };
+
+            List<UserData.Graphdata> currencyList = Task.Run(() => GetCurrencyCrypto(userValuta.Id)).Result;
+            List<BarItem> values = new List<BarItem>();
+            List<DateTime> timeStamps = new List<DateTime>();
+            foreach (UserData.Graphdata dataPoint in currencyList) {
+                values.Add(
+                     new BarItem { Value = (dataPoint.Open) });
+                timeStamps.Add(UnixTimeStampToDateTime(dataPoint.TimeStamp));
+            }
+
+            model.Axes.Add(new CategoryAxis
+            {
+                Position = AxisPosition.Left,
+                Key = "CurrencyAxis",
+                ItemsSource = timeStamps
+            });
+
+            var barSeries = new BarSeries
+            {
+                ItemsSource = values,
+                LabelPlacement = LabelPlacement.Outside,
+            };
+
+            model.Series.Add(barSeries);
+            return model;
+        }
+
+        private async Task<List<UserData.Graphdata>> GetCurrencyCrypto(int valutaId)
+        {
+            float sum = Task.Run(() => GetSumCrypto()).Result;
+            List<UserData.Graphdata> currencyList = new List<UserData.Graphdata>();
+            UserData.Rootobject user = await Connector.GetSpecficUserAPIAsync((int)Application.Current.Properties["userId"]);
+            foreach (UserData.Usergraph userGraph in user.UserGraphs)
+            {
+                if (userGraph.Graph.Valuta.Id == valutaId) {
+                    currencyList = userGraph.Graph.graphData.ToList();
+                }
+                
+            }
+            return currencyList;
+        }
+
+        private async Task<float> GetSumCrypto()
+        {
+            float sum = 0;
+            UserData.Rootobject user = await Connector.GetSpecficUserAPIAsync((int)Application.Current.Properties["userId"]);
+            foreach (UserData.Uservaluta userValuta in user.UserValutas) {
+                sum += (userValuta.Amount * userValuta.Valuta.CurrentPrice);
+            }
+
+            return sum;
         }
 
         public PlotModel CreatePlotModel(UserData.Rootobject loggedinUser, object userValutaItem)
@@ -97,6 +211,13 @@ namespace CryptoFrontEnd
             userId = (int)Application.Current.Properties["userId"];
             UserData.Uservaluta[] userValutas = await Connector.GetValutas(userId);
             ValutaListView.ItemsSource = userValutas;
+        }
+
+        private async void AddGraph_Clicked(object sender, EventArgs e)
+        {
+            AddUserValutaPage addValutaPage = new AddUserValutaPage();
+            addValutaPage.Title = "Add valuta";
+            await Navigation.PushAsync(addValutaPage);
         }
     }
 }
