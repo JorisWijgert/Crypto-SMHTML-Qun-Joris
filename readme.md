@@ -1,3 +1,1 @@
-Prachtig
 
-Zonder lelijke django
