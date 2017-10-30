@@ -77,7 +77,7 @@ namespace CryptoFrontEnd
                 Color = OxyColors.Black,
             };
             UserData.Uservaluta userValuta = (UserData.Uservaluta)item;
-            List<UserData.Graphdata> currencyList = Task.Run(() => GetCurrencyCrypto(userValuta.Id)).Result;
+            List<UserData.Graphdata> currencyList = Task.Run(() => GetCurrencyCrypto(userValuta.Valuta.Id)).Result;
             foreach (UserData.Graphdata dataPoint in currencyList)
             {
                 s1.Items.Add(new HighLowItem(DateTimeAxis.ToDouble(UnixTimeStampToDateTime(dataPoint.TimeStamp)),dataPoint.High, dataPoint.Low, dataPoint.Open, dataPoint.Close));
@@ -102,7 +102,7 @@ namespace CryptoFrontEnd
             UserData.Uservaluta userValuta = (UserData.Uservaluta)item;
             var model = new PlotModel { Title = "Currencies" };
 
-            List<UserData.Graphdata> currencyList = Task.Run(() => GetCurrencyCrypto(userValuta.Id)).Result;
+            List<UserData.Graphdata> currencyList = Task.Run(() => GetCurrencyCrypto(userValuta.Valuta.Id)).Result;
             List<BarItem> values = new List<BarItem>();
             List<DateTime> timeStamps = new List<DateTime>();
             foreach (UserData.Graphdata dataPoint in currencyList) {
