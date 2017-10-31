@@ -83,7 +83,7 @@ namespace CryptoFrontEnd
                 Color = OxyColors.Black,
             };
             UserData.Uservaluta userValuta = (UserData.Uservaluta)item;
-            List<UserData.Graphdata> currencyList = Task.Run(() => GetCurrencyCrypto(userValuta.Valuta.Id)).Result;
+            List<UserData.Graphdata> currencyList = Task.Run(() => GetCurrencyCrypto(userValuta.Valuta.Id, model)).Result;
             foreach (UserData.Graphdata dataPoint in currencyList)
             {
                 s1.Items.Add(new HighLowItem(DateTimeAxis.ToDouble(UnixTimeStampToDateTime(dataPoint.TimeStamp)),dataPoint.High, dataPoint.Low, dataPoint.Open, dataPoint.Close));
@@ -108,12 +108,11 @@ namespace CryptoFrontEnd
             UserData.Uservaluta userValuta = (UserData.Uservaluta)item;
             var model = new PlotModel { Title = "Currencies" };
 
-            List<UserData.Graphdata> currencyList = Task.Run(() => GetCurrencyCrypto(userValuta.Valuta.Id)).Result;
+            List<UserData.Graphdata> currencyList = Task.Run(() => GetCurrencyCrypto(userValuta.Valuta.Id, model)).Result;
             List<BarItem> values = new List<BarItem>();
             List<DateTime> timeStamps = new List<DateTime>();
             foreach (UserData.Graphdata dataPoint in currencyList) {
-                values.Add(
-                     new BarItem { Value = (dataPoint.Open) });
+                values.Add(new BarItem { Value = (dataPoint.Open) });
                 timeStamps.Add(UnixTimeStampToDateTime(dataPoint.TimeStamp));
             }
 
@@ -134,7 +133,7 @@ namespace CryptoFrontEnd
             return model;
         }
 
-        private async Task<List<UserData.Graphdata>> GetCurrencyCrypto(int valutaId)
+        private async Task<List<UserData.Graphdata>> GetCurrencyCrypto(int valutaId, PlotModel model)
         {
             float sum = Task.Run(() => GetSumCrypto()).Result;
             List<UserData.Graphdata> currencyList = new List<UserData.Graphdata>();
@@ -142,6 +141,7 @@ namespace CryptoFrontEnd
             foreach (UserData.Usergraph userGraph in user.UserGraphs)
             {
                 if (userGraph.Graph.Valuta.Id == valutaId) {
+                    model.Title = userGraph.Graph.Name;
                     currencyList = userGraph.Graph.graphData.ToList();
                 }
                 
