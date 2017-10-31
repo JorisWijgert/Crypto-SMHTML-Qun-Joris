@@ -9,7 +9,9 @@
         <StackLayout>
             <ListView x:Name="ValutaListView"
             HasUnevenRows="True"
-            ItemTapped="ValutaListView_ItemTapped">
+                      IsPullToRefreshEnabled="True"
+                      Refreshing="OnAppearing"            
+                      ItemTapped="ValutaListView_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

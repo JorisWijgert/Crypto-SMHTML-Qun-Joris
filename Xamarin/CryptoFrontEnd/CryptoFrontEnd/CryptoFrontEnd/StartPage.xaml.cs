@@ -17,6 +17,7 @@ namespace CryptoFrontEnd
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class StartPage : ContentPage
     {
+        private bool IsRefreshing;
         private int userId = 0;
         public StartPage()
         {
@@ -215,6 +216,7 @@ namespace CryptoFrontEnd
             userId = (int)Application.Current.Properties["userId"];
             UserData.Uservaluta[] userValutas = await Connector.GetValutas(userId);
             ValutaListView.ItemsSource = userValutas;
+            ValutaListView.IsRefreshing = false;
         }
 
         private async void AddGraph_Clicked(object sender, EventArgs e)
