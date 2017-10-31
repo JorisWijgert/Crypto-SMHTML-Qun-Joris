@@ -4,28 +4,33 @@
              x:Class="CryptoFrontEnd.SummaryPage"
              xmlns:oxy="clr-namespace:OxyPlot.Xamarin.Forms;assembly=OxyPlot.Xamarin.Forms">
     <ContentPage.Content>
-        <Grid>
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="200" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            
-            <StackLayout Orientation="Horizontal">
-                <StackLayout Orientation="Vertical">
-                    <Label x:Name="lblShortName" />
-                    <Label x:Name="lblTotal"/>
-                    <Label x:Name="lblAmount"/>
-                    <Label x:Name="lblPrice"/>
-                    <Label x:Name="lblCurrent"/>
-                </StackLayout>
-                <Label x:Name="lblPercentage"/>
-            </StackLayout>
+        <StackLayout Orientation="Vertical">
+            <Label x:Name="lblShortName" FontSize="80" FontAttributes="Italic" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*" />
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="3*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Text="Total: " FontSize="Large"/>
+                <Label Grid.Row="0" Grid.Column="1" x:Name="lblTotal" FontSize="Large"/>
+                <Label Grid.Row="0" Grid.Column="2" x:Name="lblPercentage" FontSize="Large"/>
+                <Label Grid.Row="1" Grid.Column="0" Text="Amount: " FontSize="Large" />
+                <Label Grid.Row="1" Grid.Column="1" x:Name="lblAmount" FontSize="Large"/>
+                <Label Grid.Row="2" Grid.Column="0" Text="Purchase price: " FontSize="Large" />
+                <Label Grid.Row="2" Grid.Column="1" x:Name="lblPrice" FontSize="Large"/>
+                <Label Grid.Row="3" Grid.Column="0" Text="Current price: " FontSize="Large"/>
+                <Label Grid.Row="3" Grid.Column="1" x:Name="lblCurrent" FontSize="Large"/>
+            </Grid>
 
-            <oxy:PlotView Model="{Binding PlotModel}" Grid.Row="1"
-                      VerticalOptions="FillAndExpand"
-                      HorizontalOptions="FillAndExpand" >
-            </oxy:PlotView>
-        </Grid>
+        </StackLayout>
+
     </ContentPage.Content>
 </ContentPage>
