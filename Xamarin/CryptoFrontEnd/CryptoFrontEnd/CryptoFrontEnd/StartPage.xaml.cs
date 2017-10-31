@@ -28,12 +28,18 @@ namespace CryptoFrontEnd
         private async Task ValutaListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             UserData.Rootobject user = await Connector.GetSpecficUserAPIAsync(userId);
+            UserData.Uservaluta userValuta = (UserData.Uservaluta)e.Item;
             var graphPage = new TabbedPage
             {
                 Children =
                 {
+                    new SummaryPage
+                    {
+                        Title="Summary"
+                    }
+                    ,
                     new ContentPage{
-                        Title = "CandlePlot",
+                        Title = "Candle",
                         Content = new PlotView
                         {
                             Model = CreateCandlePlotModel(user, e.Item),
@@ -42,7 +48,7 @@ namespace CryptoFrontEnd
                         }
                     },
                     new ContentPage {
-                        Title = "LinearPlot",
+                        Title = "Linear",
                         Content = new PlotView
                         {
                             Model = CreatePlotModel(user, e.Item),
@@ -51,7 +57,7 @@ namespace CryptoFrontEnd
                         },
                     },
                      new ContentPage{
-                        Title = "BarPlot",
+                        Title = "Bar",
                         Content = new PlotView
                         {
                             Model = CreateBarPlotModel(user, e.Item),
@@ -60,7 +66,7 @@ namespace CryptoFrontEnd
                         }
                     }
                 },
-                Title = "Graphs"
+                Title = $"{userValuta.Valuta.Name}"
             };
 
             await Navigation.PushAsync(graphPage);
