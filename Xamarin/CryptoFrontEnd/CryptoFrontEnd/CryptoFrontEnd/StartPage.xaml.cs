@@ -33,10 +33,8 @@ namespace CryptoFrontEnd
             {
                 Children =
                 {
-                    new SummaryPage
-                    {
-                        Title="Summary"
-                    }
+                    new SummaryPage (user, e.Item)
+                    
                     ,
                     new ContentPage{
                         Title = "Candle",
@@ -74,22 +72,25 @@ namespace CryptoFrontEnd
 
         private PlotModel CreateCandlePlotModel(UserData.Rootobject user, object item)
         {
-            var model = new PlotModel { Title = "CandleStickSeries"} ;
-
-           
-
+            var model = new PlotModel();
             var s1 = new CandleStickSeries()
             {
                 Color = OxyColors.Black,
             };
             UserData.Uservaluta userValuta = (UserData.Uservaluta)item;
-            List<UserData.Graphdata> currencyList = Task.Run(() => GetCurrencyCrypto(userValuta.Valuta.Id, model)).Result;
-            foreach (UserData.Graphdata dataPoint in currencyList)
-            {
-                s1.Items.Add(new HighLowItem(DateTimeAxis.ToDouble(UnixTimeStampToDateTime(dataPoint.TimeStamp)),dataPoint.High, dataPoint.Low, dataPoint.Open, dataPoint.Close));
 
+            foreach (UserData.Usergraph userGraph in user.UserGraphs)
+            {
+                if (userGraph.Graph.Valuta.Id == userValuta.Valuta.Id)
+                {
+                    model.Title = userGraph.Graph.Name;
+                    foreach (UserData.Graphdata graphPoint in userGraph.Graph.graphData)
+                    {
+                        s1.Items.Add(new HighLowItem(DateTimeAxis.ToDouble(UnixTimeStampToDateTime(graphPoint.TimeStamp)), graphPoint.High, graphPoint.Low, graphPoint.Open, graphPoint.Close));
+                    }
+                }
             }
-           
+
             model.Series.Add(s1);
             model.Axes.Add(new LinearAxis() { MaximumPadding = 0.3, MinimumPadding = 0.3 });
             model.Axes.Add(new DateTimeAxis
@@ -106,14 +107,22 @@ namespace CryptoFrontEnd
         private PlotModel CreateBarPlotModel(UserData.Rootobject user, object item)
         {
             UserData.Uservaluta userValuta = (UserData.Uservaluta)item;
-            var model = new PlotModel { Title = "Currencies" };
+            var model = new PlotModel();
 
-            List<UserData.Graphdata> currencyList = Task.Run(() => GetCurrencyCrypto(userValuta.Valuta.Id, model)).Result;
             List<BarItem> values = new List<BarItem>();
             List<DateTime> timeStamps = new List<DateTime>();
-            foreach (UserData.Graphdata dataPoint in currencyList) {
-                values.Add(new BarItem { Value = (dataPoint.Open) });
-                timeStamps.Add(UnixTimeStampToDateTime(dataPoint.TimeStamp));
+
+            foreach (UserData.Usergraph userGraph in user.UserGraphs)
+            {
+                if (userGraph.Graph.Valuta.Id == userValuta.Valuta.Id)
+                {
+                    model.Title = userGraph.Graph.Name;
+                    foreach (UserData.Graphdata dataPoint in userGraph.Graph.graphData)
+                    {
+                        values.Add(new BarItem { Value = (dataPoint.Open) });
+                        timeStamps.Add(UnixTimeStampToDateTime(dataPoint.TimeStamp));
+                    }
+                }
             }
 
             model.Axes.Add(new CategoryAxis
@@ -133,27 +142,12 @@ namespace CryptoFrontEnd
             return model;
         }
 
-        private async Task<List<UserData.Graphdata>> GetCurrencyCrypto(int valutaId, PlotModel model)
-        {
-            float sum = Task.Run(() => GetSumCrypto()).Result;
-            List<UserData.Graphdata> currencyList = new List<UserData.Graphdata>();
-            UserData.Rootobject user = await Connector.GetSpecficUserAPIAsync((int)Application.Current.Properties["userId"]);
-            foreach (UserData.Usergraph userGraph in user.UserGraphs)
-            {
-                if (userGraph.Graph.Valuta.Id == valutaId) {
-                    model.Title = userGraph.Graph.Name;
-                    currencyList = userGraph.Graph.graphData.ToList();
-                }
-                
-            }
-            return currencyList;
-        }
-
         private async Task<float> GetSumCrypto()
         {
             float sum = 0;
             UserData.Rootobject user = await Connector.GetSpecficUserAPIAsync((int)Application.Current.Properties["userId"]);
-            foreach (UserData.Uservaluta userValuta in user.UserValutas) {
+            foreach (UserData.Uservaluta userValuta in user.UserValutas)
+            {
                 sum += (userValuta.Amount * userValuta.Valuta.CurrentPrice);
             }
 
@@ -207,6 +201,7 @@ namespace CryptoFrontEnd
         {
             FillValutaList();
         }
+
         public static DateTime UnixTimeStampToDateTime(double unixTimeStamp)
         {
             // Unix timestamp is seconds past epoch

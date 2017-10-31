@@ -1,10 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CryptoFrontEnd.SummaryPage">
+             x:Class="CryptoFrontEnd.SummaryPage"
+             xmlns:oxy="clr-namespace:OxyPlot.Xamarin.Forms;assembly=OxyPlot.Xamarin.Forms">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin Forms!" />
-        </StackLayout>
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            
+            <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Vertical">
+                    <Label x:Name="lblShortName" />
+                    <Label x:Name="lblTotal"/>
+                    <Label x:Name="lblAmount"/>
+                    <Label x:Name="lblPrice"/>
+                    <Label x:Name="lblCurrent"/>
+                </StackLayout>
+                <Label x:Name="lblPercentage"/>
+            </StackLayout>
+
+            <oxy:PlotView Model="{Binding PlotModel}" Grid.Row="1"
+                      VerticalOptions="FillAndExpand"
+                      HorizontalOptions="FillAndExpand" >
+            </oxy:PlotView>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
