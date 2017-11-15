@@ -6,8 +6,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.List;
+
+import crypto.org.crypto.Classes.UserValuta;
+
 public class ValutaListAdapter extends RecyclerView.Adapter<ValutaListAdapter.ViewHolder> {
-    private String[] mDataset;
+    private List<UserValuta> mDataset;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -16,15 +20,17 @@ public class ValutaListAdapter extends RecyclerView.Adapter<ValutaListAdapter.Vi
         // each data item is just a string in this case
         public View mView;
         public TextView mTView1;
+        public TextView mTView2;
         public ViewHolder(View v) {
             super(v);
             mView = v;
             mTView1 = v.findViewById(R.id.text);
+            mTView2 = v.findViewById(R.id.header);
         }
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public ValutaListAdapter(String[] myDataset) {
+    public ValutaListAdapter(List<UserValuta> myDataset) {
         mDataset = myDataset;
     }
 
@@ -46,13 +52,14 @@ public class ValutaListAdapter extends RecyclerView.Adapter<ValutaListAdapter.Vi
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
 
-        holder.mTView1.setText(mDataset[position]);
+        holder.mTView1.setText(mDataset.get(position).getValuta().getName());
+        holder.mTView2.setText(mDataset.get(position).getValuta().getShortName());
     }
 
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        return mDataset.length;
+        return mDataset.size();
     }
 }
 

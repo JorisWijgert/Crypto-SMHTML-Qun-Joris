@@ -26,6 +26,8 @@ import java.util.List;
 import java.util.Set;
 
 import crypto.org.crypto.Classes.User;
+import crypto.org.crypto.Classes.UserValuta;
+import crypto.org.crypto.Classes.Valuta;
 import crypto.org.crypto.volley.AppController;
 import crypto.org.crypto.volley.BetterStringRequest;
 
@@ -41,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
 
 
-        final List<String> your_array_list = new ArrayList<>();
+        final List<UserValuta> your_array_list = new ArrayList<>();
 
         RequestQueue queue = Volley.newRequestQueue(this);
         String url = "https://i329146.venus.fhict.nl/api/users/1";
@@ -56,7 +58,12 @@ public class MainActivity extends AppCompatActivity {
                     for (int i=0; i < userValutas.length(); i++) {
                         JSONObject userValuta = userValutas.getJSONObject(i);
                         JSONObject valuta = userValuta.getJSONObject("Valuta");
-                        your_array_list.add(valuta.getString("Name"));
+                        Valuta valuta1 = new Valuta();
+                        valuta1.setName(valuta.getString("Name"));
+                        valuta1.setShortName(valuta.getString("ShortName"));
+                        UserValuta userValuta1 = new UserValuta();
+                        userValuta1.setValuta(valuta1);
+                        your_array_list.add(userValuta1);
                     }
 
                     lvAdapater.notifyDataSetChanged();
@@ -87,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         // specify an adapter (see also next example)
-        lvAdapater = new ValutaListAdapter(new String[]{"data1", "data2"});
+        lvAdapater = new ValutaListAdapter(your_array_list);
         mRecyclerView.setAdapter(lvAdapater);
     }
 }
