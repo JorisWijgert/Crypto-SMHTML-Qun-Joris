@@ -1,4 +1,4 @@
-package crypto.org.crypto.Classes;
+package crypto.org.crypto.Model;
 
 /**
  * Created by Qunfo on 15-Nov-17.

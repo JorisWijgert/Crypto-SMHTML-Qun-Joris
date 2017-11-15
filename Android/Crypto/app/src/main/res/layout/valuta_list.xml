@@ -6,11 +6,11 @@
 
     <TextView android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Header"/>
+        android:id="@+id/valutaName"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/text"/>
+        android:id="@+id/valutaPrice"/>
 
 </LinearLayout>

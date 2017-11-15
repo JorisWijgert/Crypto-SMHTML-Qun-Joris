@@ -1,4 +1,4 @@
-package crypto.org.crypto.Classes;
+package crypto.org.crypto.Model;
 
 import java.util.List;
 
