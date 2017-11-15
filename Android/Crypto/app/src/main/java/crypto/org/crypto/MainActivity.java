@@ -29,7 +29,7 @@ import crypto.org.crypto.volley.BetterStringRequest;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ArrayAdapter<String> lvAdapater;
+    private ValutaListAdapter lvAdapater;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,10 +77,7 @@ public class MainActivity extends AppCompatActivity {
         // This is the array adapter, it takes the context of the activity as a
         // first parameter, the type of list view as a second parameter and your
         // array as a third parameter.
-        lvAdapater = new ArrayAdapter<String>(
-                this,
-                android.R.layout.simple_list_item_1,
-                your_array_list);
+        lvAdapater = new ValutaListAdapter(this, new String[]{"data1", "data2"});
 
         lv.setAdapter(lvAdapater);
     }
