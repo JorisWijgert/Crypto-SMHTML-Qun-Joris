@@ -2,6 +2,8 @@ package crypto.org.crypto;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -36,7 +38,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final ListView lv = (ListView) findViewById(R.id.listview);
+        RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+
 
         final List<String> your_array_list = new ArrayList<>();
 
@@ -74,11 +77,17 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        // This is the array adapter, it takes the context of the activity as a
-        // first parameter, the type of list view as a second parameter and your
-        // array as a third parameter.
-        lvAdapater = new ValutaListAdapter(this, new String[]{"data1", "data2"});
+        // use this setting to improve performance if you know that changes
+        // in content do not change the layout size of the RecyclerView
+        mRecyclerView.setHasFixedSize(true);
 
-        lv.setAdapter(lvAdapater);
+        // use a linear layout manager
+        LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+
+
+        // specify an adapter (see also next example)
+        lvAdapater = new ValutaListAdapter(new String[]{"data1", "data2"});
+        mRecyclerView.setAdapter(lvAdapater);
     }
 }

@@ -1,56 +1,58 @@
 package crypto.org.crypto;
 
-import android.content.Context;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-/**
- * Created by Joris on 15-11-2017.
- */
+public class ValutaListAdapter extends RecyclerView.Adapter<ValutaListAdapter.ViewHolder> {
+    private String[] mDataset;
 
-public class ValutaListAdapter extends BaseAdapter {
-
-    Context context;
-    String[] data;
-    private static LayoutInflater inflater = null;
-
-    public ValutaListAdapter(Context context, String[] data) {
-        // TODO Auto-generated constructor stub
-        this.context = context;
-        this.data = data;
-        inflater = (LayoutInflater) context
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    // Provide a reference to the views for each data item
+    // Complex data items may need more than one view per item, and
+    // you provide access to all the views for a data item in a view holder
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        // each data item is just a string in this case
+        public View mView;
+        public TextView mTView1;
+        public ViewHolder(View v) {
+            super(v);
+            mView = v;
+            mTView1 = v.findViewById(R.id.text);
+        }
     }
 
-    @Override
-    public int getCount() {
-        // TODO Auto-generated method stub
-        return data.length;
+    // Provide a suitable constructor (depends on the kind of dataset)
+    public ValutaListAdapter(String[] myDataset) {
+        mDataset = myDataset;
     }
 
+    // Create new views (invoked by the layout manager)
     @Override
-    public Object getItem(int position) {
-        // TODO Auto-generated method stub
-        return data[position];
+    public ValutaListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
+                                                   int viewType) {
+        // create a new view
+        View v = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.valuta_list, parent, false);
+        // set the view's size, margins, paddings and layout parameters
+        ViewHolder vh = new ViewHolder(v);
+        return vh;
     }
 
+    // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public long getItemId(int position) {
-        // TODO Auto-generated method stub
-        return position;
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        // - get element from your dataset at this position
+        // - replace the contents of the view with that element
+
+        holder.mTView1.setText(mDataset[position]);
     }
 
+    // Return the size of your dataset (invoked by the layout manager)
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        // TODO Auto-generated method stub
-        View vi = convertView;
-        if (vi == null)
-            vi = inflater.inflate(R.layout.valuta_list, null);
-        TextView text = (TextView) vi.findViewById(R.id.text);
-        text.setText(data[position]);
-        return vi;
+    public int getItemCount() {
+        return mDataset.length;
     }
 }
+
