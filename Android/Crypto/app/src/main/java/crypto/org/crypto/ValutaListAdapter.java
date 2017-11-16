@@ -14,14 +14,20 @@ import java.util.List;
 
 import crypto.org.crypto.Classes.UserValuta;
 
-public class ValutaListAdapter extends RecyclerView.Adapter<ValutaListAdapter.ViewHolder> {
+public class ValutaListAdapter extends RecyclerView.Adapter<ValutaListAdapter.ViewHolder>{
     private List<UserValuta> mDataset;
     private Context context;
+
+    public void setClickListener(OnItemClickListener clickListener) {
+        this.clickListener = clickListener;
+    }
+
+    private OnItemClickListener clickListener;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         // each data item is just a string in this case
         public View mView;
         public TextView tvName;
@@ -38,7 +44,16 @@ public class ValutaListAdapter extends RecyclerView.Adapter<ValutaListAdapter.Vi
             tvAmount = v.findViewById(R.id.amount);
             tvPerc = v.findViewById(R.id.tvPerc);
             ivLogo = v.findViewById(R.id.imageView);
+            v.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View view) {
+            if (clickListener != null) clickListener.onClick(view, getAdapterPosition());
+        }
+
+
+
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
@@ -109,5 +124,7 @@ public class ValutaListAdapter extends RecyclerView.Adapter<ValutaListAdapter.Vi
     public int getItemCount() {
         return mDataset.size();
     }
+
+
 }
 
