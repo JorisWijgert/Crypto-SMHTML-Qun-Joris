@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -19,13 +20,16 @@ public class ValutaListAdapter extends RecyclerView.Adapter<ValutaListAdapter.Vi
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
         public View mView;
-        public TextView mTView1;
-        public TextView mTView2;
+        public TextView tvName;
+        public TextView tvShortName;
+        public ImageView ivLogo;
+
         public ViewHolder(View v) {
             super(v);
             mView = v;
-            mTView1 = v.findViewById(R.id.text);
-            mTView2 = v.findViewById(R.id.header);
+            tvName = v.findViewById(R.id.name);
+            tvShortName = v.findViewById(R.id.shortName);
+            ivLogo = v.findViewById(R.id.imageView);
         }
     }
 
@@ -37,7 +41,7 @@ public class ValutaListAdapter extends RecyclerView.Adapter<ValutaListAdapter.Vi
     // Create new views (invoked by the layout manager)
     @Override
     public ValutaListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
-                                                   int viewType) {
+                                                           int viewType) {
         // create a new view
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.valuta_list, parent, false);
@@ -52,8 +56,31 @@ public class ValutaListAdapter extends RecyclerView.Adapter<ValutaListAdapter.Vi
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
 
-        holder.mTView1.setText(mDataset.get(position).getValuta().getName());
-        holder.mTView2.setText(mDataset.get(position).getValuta().getShortName());
+        String currencyName = mDataset.get(position).getValuta().getName();
+
+        holder.tvName.setText(currencyName);
+        holder.tvShortName.setText(mDataset.get(position).getValuta().getShortName());
+
+        switch (currencyName.toLowerCase()) {
+            case "bitcoin":
+                holder.ivLogo.setImageResource(R.drawable.bitcoin_logo);
+                break;
+            case "ethereum":
+                holder.ivLogo.setImageResource(R.drawable.ethereum_logo);
+                break;
+            case "litecoin":
+                holder.ivLogo.setImageResource(R.drawable.litecoin_logo);
+                break;
+            case "ripple":
+                holder.ivLogo.setImageResource(R.drawable.ripple_logo);
+                break;
+            case "bitcoin cash":
+                holder.ivLogo.setImageResource(R.drawable.bitcoin_cash_logo);
+                break;
+            default:
+                holder.ivLogo.setImageResource(R.mipmap.ic_launcher_foreground);
+                break;
+        }
     }
 
     // Return the size of your dataset (invoked by the layout manager)

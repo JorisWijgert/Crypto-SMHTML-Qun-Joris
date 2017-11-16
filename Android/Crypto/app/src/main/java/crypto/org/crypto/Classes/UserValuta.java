@@ -13,7 +13,7 @@ package crypto.org.crypto.Classes;
 public class UserValuta {
         private Valuta Valuta;
         private int Id;
-        private int Amount;
+        private double Amount;
         private double PurchasePrice;
 
         public Valuta getValuta() {
@@ -32,11 +32,11 @@ public class UserValuta {
             this.Id = Id;
         }
 
-        public int getAmount() {
+        public double getAmount() {
             return Amount;
         }
 
-        public void setAmount(int Amount) {
+        public void setAmount(double Amount) {
             this.Amount = Amount;
         }
 
