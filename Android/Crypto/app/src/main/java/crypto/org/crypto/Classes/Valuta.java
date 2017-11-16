@@ -4,13 +4,15 @@ package crypto.org.crypto.Classes;
  * Created by Qunfo on 15-Nov-17.
  */
 
+import java.io.Serializable;
+
 /**
  * Id : 1
  * Name : BitCoin
  * ShortName : BTC
  * CurrentPrice : 12.5
  */
-public class Valuta {
+public class Valuta implements Serializable {
         private int Id;
         private String Name;
         private String ShortName;

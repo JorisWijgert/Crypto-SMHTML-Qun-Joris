@@ -1,11 +1,13 @@
 package crypto.org.crypto;
 
+import android.content.Intent;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -22,6 +24,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -33,7 +36,7 @@ import crypto.org.crypto.Classes.Valuta;
 import crypto.org.crypto.volley.AppController;
 import crypto.org.crypto.volley.BetterStringRequest;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OnItemClickListener {
 
     private ValutaListAdapter lvAdapater;
     private SwipeRefreshLayout swipeContainer;
@@ -77,7 +80,9 @@ public class MainActivity extends AppCompatActivity {
         retrieveData();
         // specify an adapter (see also next example)
         lvAdapater = new ValutaListAdapter(userValutas, this);
+        lvAdapater.setClickListener(this);
         mRecyclerView.setAdapter(lvAdapater);
+
     }
 
     private void retrieveData() {
@@ -126,5 +131,13 @@ public class MainActivity extends AppCompatActivity {
                 return uv;
         }
         return null;
+    }
+
+    @Override
+    public void onClick(View view,  int position) {
+        final UserValuta userValuta = userValutas.get(position);
+        Intent summaryActivity = new Intent(this, SummaryActivity.class);
+        summaryActivity.putExtra("userValuta", (Serializable) userValuta);
+        startActivity(summaryActivity);
     }
 }
