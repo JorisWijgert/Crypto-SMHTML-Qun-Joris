@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="basicTextSize">20sp</dimen>
+    <dimen name="basicTextSize">16sp</dimen>
     <dimen name="headerTextSize">26sp</dimen>
     <dimen name="imageSize">70dp</dimen>
     <dimen name="normalTextSize">18sp</dimen>

@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        swipeContainer.setColorSchemeResources(R.color.colorPrimary, R.color.colorPrimary, R.color.colorPrimary);
 
         userValutas = new ArrayList<>();
 
