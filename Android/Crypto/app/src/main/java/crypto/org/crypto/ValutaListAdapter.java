@@ -1,5 +1,8 @@
 package crypto.org.crypto;
 
+import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +16,7 @@ import crypto.org.crypto.Classes.UserValuta;
 
 public class ValutaListAdapter extends RecyclerView.Adapter<ValutaListAdapter.ViewHolder> {
     private List<UserValuta> mDataset;
+    private Context context;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -22,6 +26,8 @@ public class ValutaListAdapter extends RecyclerView.Adapter<ValutaListAdapter.Vi
         public View mView;
         public TextView tvName;
         public TextView tvShortName;
+        public TextView tvAmount;
+        public TextView tvPerc;
         public ImageView ivLogo;
 
         public ViewHolder(View v) {
@@ -29,13 +35,16 @@ public class ValutaListAdapter extends RecyclerView.Adapter<ValutaListAdapter.Vi
             mView = v;
             tvName = v.findViewById(R.id.name);
             tvShortName = v.findViewById(R.id.shortName);
+            tvAmount = v.findViewById(R.id.amount);
+            tvPerc = v.findViewById(R.id.tvPerc);
             ivLogo = v.findViewById(R.id.imageView);
         }
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public ValutaListAdapter(List<UserValuta> myDataset) {
+    public ValutaListAdapter(List<UserValuta> myDataset, Context context) {
         mDataset = myDataset;
+        this.context = context;
     }
 
     // Create new views (invoked by the layout manager)
@@ -60,6 +69,18 @@ public class ValutaListAdapter extends RecyclerView.Adapter<ValutaListAdapter.Vi
 
         holder.tvName.setText(currencyName);
         holder.tvShortName.setText(mDataset.get(position).getValuta().getShortName());
+        double amount = mDataset.get(position).getAmount();
+        double currentPrice = mDataset.get(position).getValuta().getCurrentPrice();
+        double purchasePrice = mDataset.get(position).getPurchasePrice();
+        holder.tvAmount.setText(String.format("$ %.2f", (amount*currentPrice)));
+        double perc = (((amount * purchasePrice) - (amount * currentPrice)) / (amount * currentPrice)) * 100;
+        holder.tvPerc.setText(String.format("%.2f %%", perc));
+
+        if (perc < 0)
+            holder.tvPerc.setTextColor(Color.RED);
+        else {
+            holder.tvPerc.setTextColor(context.getResources().getColor(R.color.DarkGreen, null));
+        }
 
         switch (currencyName.toLowerCase()) {
             case "bitcoin":

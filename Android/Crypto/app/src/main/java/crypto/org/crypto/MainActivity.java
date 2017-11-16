@@ -1,5 +1,6 @@
 package crypto.org.crypto;
 
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -35,6 +36,7 @@ import crypto.org.crypto.volley.BetterStringRequest;
 public class MainActivity extends AppCompatActivity {
 
     private ValutaListAdapter lvAdapater;
+    private SwipeRefreshLayout swipeContainer;
 
     private List<UserValuta> userValutas;
 
@@ -43,8 +45,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+        final RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
         mRecyclerView.addItemDecoration(new SimpleDividerItemDecoration(this));
+        // Lookup the swipe container view
+        swipeContainer = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
+        // Setup refresh listener which triggers new data loading
+        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                // Your code to refresh the list here.
+                // Make sure you call swipeContainer.setRefreshing(false)
+                // once the network request has completed successfully.
+                retrieveData();
+                // specify an adapter (see also next example)
+                lvAdapater = new ValutaListAdapter(userValutas, getApplicationContext());
+                mRecyclerView.setAdapter(lvAdapater);
+            }
+        });
+
 
         userValutas = new ArrayList<>();
 
@@ -58,39 +76,33 @@ public class MainActivity extends AppCompatActivity {
 
         retrieveData();
         // specify an adapter (see also next example)
-        lvAdapater = new ValutaListAdapter(userValutas);
+        lvAdapater = new ValutaListAdapter(userValutas, this);
         mRecyclerView.setAdapter(lvAdapater);
     }
 
-    public void retrieveData(){
-
+    private void retrieveData() {
+        userValutas.clear();
         String url = "https://i329146.venus.fhict.nl/api/users/1";
         BetterStringRequest jsObjRequest = new BetterStringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                try {
-                    Gson gson = new Gson();
-                    User user = gson.fromJson(response, User.class);
 
-                    JSONObject jsonObject = new JSONObject(response);
-                    JSONArray userValutasJ = jsonObject.getJSONArray("UserValutas");
+                Gson gson = new Gson();
+                User user = gson.fromJson(response, User.class);
 
-                    for (int i=0; i < userValutasJ.length(); i++) {
-                        JSONObject userValuta = userValutasJ.getJSONObject(i);
-                        JSONObject valuta = userValuta.getJSONObject("Valuta");
-                        Valuta valuta1 = new Valuta();
-                        valuta1.setName(valuta.getString("Name"));
-                        valuta1.setShortName(valuta.getString("ShortName"));
-                        UserValuta userValuta1 = new UserValuta();
-                        userValuta1.setValuta(valuta1);
-                        userValutas.add(userValuta1);
-                    }
 
-                    lvAdapater.notifyDataSetChanged();
+                for (UserValuta userValuta : user.getUserValutas()) {
+                    UserValuta otherUv = checkUserValutasContains(userValuta);
+                    if (otherUv == null) {
+                        otherUv = userValuta;
+                        userValutas.add(otherUv);
+                    } else
+                        otherUv.setAmount(otherUv.getAmount() + userValuta.getAmount());
 
-                } catch (JSONException e) {
-                    e.printStackTrace();
                 }
+
+                lvAdapater.notifyDataSetChanged();
+                swipeContainer.setRefreshing(false);
             }
         }, new Response.ErrorListener() {
             @Override
@@ -100,5 +112,19 @@ public class MainActivity extends AppCompatActivity {
         });
 
         AppController.getInstance().addToRequestQueue(jsObjRequest);
+    }
+
+    /**
+     * Checks if the given userValuta name exists in the userValutas list.
+     *
+     * @param userValuta the userValuta to check
+     * @return true if the user exists in the userValutas list, otherwise return false
+     */
+    private UserValuta checkUserValutasContains(UserValuta userValuta) {
+        for (UserValuta uv : userValutas) {
+            if (uv.getValuta().getShortName().equals(userValuta.getValuta().getShortName()))
+                return uv;
+        }
+        return null;
     }
 }

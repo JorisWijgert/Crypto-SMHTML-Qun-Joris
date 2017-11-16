@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="@dimen/imageSize"
+        android:layout_height="@dimen/imageSize"
         android:src="@drawable/ic_launcher_background"
         android:padding="10dp"/>
 
@@ -22,7 +22,7 @@
         android:layout_alignStart="@+id/name"
         android:text="BTC"
         android:textColor="@android:color/black"
-        android:textSize="32sp"
+        android:textSize="@dimen/headerTextSize"
         android:textStyle="bold" />
 
     <TextView
@@ -34,7 +34,34 @@
         android:layout_toEndOf="@+id/imageView"
         android:text="Bitcoin"
         android:textColor="@android:color/darker_gray"
-        android:textSize="26sp"
+        android:textSize="@dimen/basicTextSize"
         android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/tvTotal"
+        android:layout_marginEnd="8dp"
+        android:text="Amount"
+        android:textSize="@dimen/normalTextSize" />
+
+    <TextView
+        android:id="@+id/tvTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/amount"
+        android:layout_alignParentTop="true"
+        android:text="@string/total" />
+
+    <TextView
+        android:id="@+id/tvPerc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/tvTotal"
+        android:layout_below="@+id/amount"
+        android:textSize="@dimen/normalTextSize"
+        android:text="%" />
 
 </RelativeLayout>
