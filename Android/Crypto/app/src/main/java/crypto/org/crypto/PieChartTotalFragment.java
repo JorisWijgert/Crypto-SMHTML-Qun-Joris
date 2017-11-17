@@ -18,7 +18,6 @@ public class PieChartTotalFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Nullable
@@ -27,8 +26,8 @@ public class PieChartTotalFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_pie_chart_total, container, false);
         TextView textView = (TextView)view.findViewById(R.id.tv_valutaName);
         Bundle bundle = getArguments();
-//        UserValuta userValuta = (UserValuta)bundle.getSerializable("userValuta");
-        textView.setText(bundle.getString("Testing"));
+        UserValuta userValuta = (UserValuta)bundle.getSerializable("userValuta");
+        textView.setText(userValuta.getValuta().getName());
         return view;
     }
 }

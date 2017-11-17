@@ -9,19 +9,9 @@ import crypto.org.crypto.Classes.UserValuta;
 
 public class SummaryActivity extends FragmentActivity {
 
-    private UserValuta userValuta;
-
-    public SummaryActivity(UserValuta userValuta) {
-        this.userValuta = userValuta;
-    }
-
-    public SummaryActivity() {
-
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
+        super.onCreate(savedInstanceState);
 
         UserValuta userValuta = (UserValuta) getIntent().getSerializableExtra("userValuta");
         Toast.makeText(this, userValuta.getValuta().getName(), Toast.LENGTH_SHORT).show();
@@ -29,9 +19,10 @@ public class SummaryActivity extends FragmentActivity {
         bundle.putSerializable("userValuta", userValuta);
         bundle.putString("Testing", "Testing");
 
+
+
         DetailsFragment detailsFragment = new DetailsFragment();
         detailsFragment.setArguments(bundle);
-        super.onCreate(savedInstanceState);
         FragmentManager manager = getSupportFragmentManager();
         manager.beginTransaction()
                 .replace(R.id.details_fragment, detailsFragment, detailsFragment.getTag())
