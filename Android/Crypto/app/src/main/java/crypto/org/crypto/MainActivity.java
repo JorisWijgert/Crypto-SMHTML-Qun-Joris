@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
             }
         });
 
+        swipeContainer.setColorSchemeResources(R.color.colorPrimary, R.color.colorPrimary, R.color.colorPrimary);
 
         userValutas = new ArrayList<>();
 
