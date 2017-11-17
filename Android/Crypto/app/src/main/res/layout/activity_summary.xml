@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="crypto.org.crypto.SummaryActivity">
+
+    <fragment
+        android:id="@+id/details_fragment"
+        android:name="crypto.org.crypto.DetailsFragment"
+        android:layout_width="389dp"
+        android:layout_height="247dp"
+        android:layout_weight="1" />
+
+    <fragment
+    android:id="@+id/pie_chart_total_fragment"
+    android:name="crypto.org.crypto.PieChartTotalFragment"
+    android:layout_width="431dp"
+    android:layout_height="277dp"
+    android:layout_alignParentStart="true"
+    android:layout_below="@+id/details_fragment"
+    android:layout_weight="2"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="246dp" />
+
+</RelativeLayout>
