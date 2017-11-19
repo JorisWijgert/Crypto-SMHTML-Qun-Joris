@@ -141,4 +141,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         summaryActivity.putExtra("userValuta", (Serializable) userValuta);
         startActivity(summaryActivity);
     }
+
+
+
 }

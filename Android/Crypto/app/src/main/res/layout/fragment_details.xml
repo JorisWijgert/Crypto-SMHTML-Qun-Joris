@@ -5,14 +5,11 @@
     tools:context="crypto.org.crypto.DetailsFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Valuta name is :" />
 
     <TextView
         android:id="@+id/tv_valutaName"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:text="" />
+
 </FrameLayout>

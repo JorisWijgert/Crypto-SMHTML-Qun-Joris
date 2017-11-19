@@ -17,7 +17,6 @@ public class SummaryActivity extends FragmentActivity {
         Toast.makeText(this, userValuta.getValuta().getName(), Toast.LENGTH_SHORT).show();
         Bundle bundle = new Bundle();
         bundle.putSerializable("userValuta", userValuta);
-        bundle.putString("Testing", "Testing");
 
 
 
