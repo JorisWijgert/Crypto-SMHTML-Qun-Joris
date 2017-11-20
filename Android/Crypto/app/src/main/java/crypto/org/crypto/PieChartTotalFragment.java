@@ -5,9 +5,13 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -18,6 +22,7 @@ import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.gson.Gson;
 
 import org.w3c.dom.Text;
@@ -35,6 +40,7 @@ public class PieChartTotalFragment extends Fragment {
     private View view;
     private UserValuta userValuta;
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,20 +54,23 @@ public class PieChartTotalFragment extends Fragment {
         Bundle bundle = getArguments();
         userValuta = (UserValuta) bundle.getSerializable("userValuta");
         getUserData();
-
         return view;
     }
+
+
 
     private void generatePieChart(UserValuta userValuta, User user) {
         PieChart chart = (PieChart) view.findViewById(R.id.chart);
         ArrayList<PieEntry> amountEntries = new ArrayList<PieEntry>();
+
         for (UserValuta userValuta1 : user.getUserValutas()) {
             if (userValuta1.getValuta().getName().equals(userValuta.getValuta().getName())) {
                 amountEntries.add(new PieEntry((float) userValuta1.getAmount()));
+
             }
         }
-
         PieDataSet dataSet = new PieDataSet(amountEntries, "");
+        dataSet.setColors(ColorTemplate.COLORFUL_COLORS);
         PieData data = new PieData(dataSet);
         chart.setData(data);
         chart.invalidate();

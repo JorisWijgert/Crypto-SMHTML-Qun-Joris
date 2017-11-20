@@ -12,13 +12,12 @@ public class SummaryActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         UserValuta userValuta = (UserValuta) getIntent().getSerializableExtra("userValuta");
         Toast.makeText(this, userValuta.getValuta().getName(), Toast.LENGTH_SHORT).show();
         Bundle bundle = new Bundle();
         bundle.putSerializable("userValuta", userValuta);
 
-
+        this.setTitle(userValuta.getValuta().getName());
 
         DetailsFragment detailsFragment = new DetailsFragment();
         detailsFragment.setArguments(bundle);
