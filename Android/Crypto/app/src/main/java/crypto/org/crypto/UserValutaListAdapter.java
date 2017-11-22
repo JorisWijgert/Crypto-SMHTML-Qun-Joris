@@ -72,10 +72,16 @@ public class UserValutaListAdapter extends RecyclerView.Adapter<UserValutaListAd
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        // - get element from your dataset at this position
-        // - replace the contents of the view with that element
-        holder.tvAmount.setText(String.valueOf(mDataset.get(position).getAmount()));
-        holder.tvPrice.setText(String.valueOf(mDataset.get(position).getPurchasePrice()));
+        String price = getRoundedDouble(mDataset.get(position).getPurchasePrice());
+        String amount = getRoundedDouble(mDataset.get(position).getAmount());
+
+        holder.tvAmount.setText(amount);
+        holder.tvPrice.setText("$" + price);
+
+    }
+
+    private String getRoundedDouble(Double number){
+        return String.format("%.2f", number);
     }
 
     // Return the size of your dataset (invoked by the layout manager)

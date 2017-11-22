@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -38,13 +39,25 @@ public class DetailsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_details, container, false);
-
         Bundle bundle = getArguments();
         userValuta = (UserValuta) bundle.getSerializable("userValuta");
         getUserData();
-
         return view;
 
+    }
+
+    private void setCoinNameAndSum() {
+        TextView coinName = (TextView)view.findViewById(R.id.coin_name);
+        TextView totalPrice = (TextView)view.findViewById(R.id.price);
+
+        coinName.setText(userValuta.getValuta().getShortName());
+        double totalPriceCoin = 0;
+        ArrayList<UserValuta> userValutas = getUserValutas(userValuta,user);
+        for(UserValuta userValuta : userValutas){
+            totalPriceCoin += userValuta.getAmount() * userValuta.getValuta().getCurrentPrice();
+        }
+        double roundedTotalPriceCoin  = (double) Math.round(totalPriceCoin * 100) / 100;
+        totalPrice.setText("Total: $" + Double.toString(roundedTotalPriceCoin));
     }
 
     private void fillUserValutas() {
@@ -101,6 +114,7 @@ public class DetailsFragment extends Fragment {
                 Gson gson = new Gson();
                 user = gson.fromJson(response, User.class);
                 fillUserValutas();
+                setCoinNameAndSum();
             }
         }, new Response.ErrorListener() {
             @Override

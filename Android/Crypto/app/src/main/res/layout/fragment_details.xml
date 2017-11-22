@@ -13,13 +13,16 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@drawable/customborder">
 
             <TextView
                 android:id="@+id/coin_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="start"
+                android:textSize="@dimen/headerTextSize"
+                android:textStyle="italic"
                 android:text="Naam coin" />
 
             <TextView
@@ -27,6 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="end"
+                android:textSize="@dimen/headerTextSize"
                 android:text="Totaalprijs" />
 
         </LinearLayout>
@@ -37,6 +41,31 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:background="@drawable/customborder">
+
+            <TextView
+                android:id="@+id/header_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:textSize="@dimen/normalTextSize"
+                android:textStyle="bold"
+                android:text="Hoeveelheid" />
+
+            <TextView
+                android:id="@+id/header_purcaseprice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textSize="@dimen/normalTextSize"
+                android:textStyle="bold"
+                android:text="Aankoopbedag" />
+
+        </LinearLayout>
 
         <android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/swipe_container"

@@ -17,8 +17,10 @@ import android.widget.TextView;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
@@ -73,7 +75,12 @@ public class PieChartTotalFragment extends Fragment {
         dataSet.setColors(ColorTemplate.COLORFUL_COLORS);
         PieData data = new PieData(dataSet);
         chart.setData(data);
+        Description emptyDescription = new Description();
+        emptyDescription.setText("");
+        chart.setDescription(emptyDescription);
+        chart.animateY(3000, Easing.EasingOption.EaseOutBack);
         chart.invalidate();
+
     }
 
 
