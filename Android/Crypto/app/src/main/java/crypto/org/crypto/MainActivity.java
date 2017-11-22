@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
                 retrieveData();
                 // specify an adapter (see also next example)
                 lvAdapater = new ValutaListAdapter(userValutas, getApplicationContext());
+                lvAdapater.setClickListener(MainActivity.this);
                 mRecyclerView.setAdapter(lvAdapater);
             }
         });
@@ -116,7 +117,6 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
 
             }
         });
-
         AppController.getInstance().addToRequestQueue(jsObjRequest);
     }
 
