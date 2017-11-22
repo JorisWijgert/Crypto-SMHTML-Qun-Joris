@@ -2,6 +2,7 @@ package crypto.org.crypto;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -41,9 +42,38 @@ public class DetailsFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_details, container, false);
         Bundle bundle = getArguments();
         userValuta = (UserValuta) bundle.getSerializable("userValuta");
+
+        final RecyclerView mRecyclerView = (RecyclerView) view.findViewById(R.id.my_recycler_view);
+        InitSwipeContainer(mRecyclerView);
+
         getUserData();
         return view;
 
+    }
+
+    private void InitSwipeContainer(final RecyclerView mRecyclerView) {
+        swipeContainer = view.findViewById(R.id.swipe_container);
+        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                RefreshUserValutaList(mRecyclerView);
+                UpdatePieChartFragment();
+            }
+        });
+
+        swipeContainer.setColorSchemeResources(R.color.colorPrimary, R.color.colorPrimary, R.color.colorPrimary);
+    }
+
+    private void RefreshUserValutaList(RecyclerView mRecyclerView) {
+        getUserData();
+        lvAdapater = new UserValutaListAdapter(userValutas, getActivity().getApplicationContext());
+        mRecyclerView.setAdapter(lvAdapater);
+    }
+
+    private void UpdatePieChartFragment() {
+        FragmentManager fm = getFragmentManager();
+        PieChartTotalFragment fragm = (PieChartTotalFragment)fm.findFragmentById(R.id.pie_chart_total_fragment);
+        fragm.getUserData();
     }
 
     private void setCoinNameAndSum() {
@@ -63,33 +93,13 @@ public class DetailsFragment extends Fragment {
     private void fillUserValutas() {
         final RecyclerView mRecyclerView = (RecyclerView) view.findViewById(R.id.my_recycler_view);
         mRecyclerView.addItemDecoration(new SimpleDividerItemDecoration(this.getContext()));
-        // Lookup the swipe container view
-        swipeContainer = (SwipeRefreshLayout) view.findViewById(R.id.swipe_container);
-        // Setup refresh listener which triggers new data loading
-        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                // specify an adapter (see also next example)
-                userValutas = getUserValutas(userValuta, user);
-                lvAdapater = new UserValutaListAdapter(userValutas, getActivity().getApplicationContext());
-                mRecyclerView.setAdapter(lvAdapater);
-            }
-        });
-
-        swipeContainer.setColorSchemeResources(R.color.colorPrimary, R.color.colorPrimary, R.color.colorPrimary);
-
         userValutas = new ArrayList<>();
-
-        // use this setting to improve performance if you know that changes
-        // in content do not change the layout size of the RecyclerView
         mRecyclerView.setHasFixedSize(true);
-
-        // use a linear layout manager
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
         userValutas = getUserValutas(userValuta, user);
-        // specify an adapter (see also next example)
         lvAdapater = new UserValutaListAdapter(userValutas, getActivity());
+        lvAdapater.notifyDataSetChanged();
         mRecyclerView.setAdapter(lvAdapater);
     }
 

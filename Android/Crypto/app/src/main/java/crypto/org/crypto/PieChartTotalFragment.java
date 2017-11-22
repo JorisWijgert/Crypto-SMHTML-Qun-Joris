@@ -1,6 +1,7 @@
 package crypto.org.crypto;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -21,15 +22,19 @@ import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.components.LegendEntry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.gson.Gson;
 
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import crypto.org.crypto.Classes.User;
 import crypto.org.crypto.Classes.UserValuta;
@@ -64,23 +69,39 @@ public class PieChartTotalFragment extends Fragment {
     private void generatePieChart(UserValuta userValuta, User user) {
         PieChart chart = (PieChart) view.findViewById(R.id.chart);
         ArrayList<PieEntry> amountEntries = new ArrayList<PieEntry>();
-
         for (UserValuta userValuta1 : user.getUserValutas()) {
             if (userValuta1.getValuta().getName().equals(userValuta.getValuta().getName())) {
-                amountEntries.add(new PieEntry((float) userValuta1.getAmount()));
-
+                amountEntries.add(new PieEntry((float) userValuta1.getAmount(),String.valueOf(userValuta1.getAmount())));
             }
         }
         PieDataSet dataSet = new PieDataSet(amountEntries, "");
-        dataSet.setColors(ColorTemplate.COLORFUL_COLORS);
+        dataSet.setValueTextSize(15f);
+        dataSet.setSelectionShift(10f);
+        dataSet.setValueFormatter(new PercentFormatter());
+        dataSet.setColors(CustomColorTemplate.Colors);
+        setLegendSettings(chart);
         PieData data = new PieData(dataSet);
         chart.setData(data);
-        Description emptyDescription = new Description();
-        emptyDescription.setText("");
-        chart.setDescription(emptyDescription);
+        chart.getDescription().setText("");
+        chart.setUsePercentValues(true);
         chart.animateY(3000, Easing.EasingOption.EaseOutBack);
         chart.invalidate();
 
+    }
+
+    private void setLegendSettings(PieChart chart) {
+        Legend l = chart.getLegend();
+        l.setVerticalAlignment(Legend.LegendVerticalAlignment.TOP);
+        l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.RIGHT);
+        l.setOrientation(Legend.LegendOrientation.VERTICAL);
+        l.setDrawInside(false);
+        l.setXEntrySpace(7f);
+        l.setYEntrySpace(0f);
+        l.setYOffset(0f);
+        l.setEnabled(true);
+        chart.getLegend().setWordWrapEnabled(true);
+        chart.setEntryLabelColor(Color.WHITE);
+        chart.setEntryLabelTextSize(12f);
     }
 
 
