@@ -21,8 +21,17 @@ public class BaseSummaryFragment extends Fragment {
 
 
     @Override
+    public void onResume() {
+        super.onResume();
+        createFragments();
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+    }
+
+    private void createFragments(){
         UserValuta userValuta = (UserValuta) getArguments().getSerializable("userValuta");
         Bundle bundle = new Bundle();
         bundle.putSerializable("userValuta", userValuta);
@@ -41,8 +50,8 @@ public class BaseSummaryFragment extends Fragment {
                 .replace(R.id.pie_chart_total_fragment, pieChartTotalFragment, pieChartTotalFragment.getTag())
                 .commit();
 
-
     }
+
 
     @Nullable
     @Override
