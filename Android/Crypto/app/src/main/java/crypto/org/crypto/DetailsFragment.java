@@ -72,21 +72,21 @@ public class DetailsFragment extends Fragment {
 
     private void UpdatePieChartFragment() {
         FragmentManager fm = getFragmentManager();
-        PieChartTotalFragment fragm = (PieChartTotalFragment)fm.findFragmentById(R.id.pie_chart_total_fragment);
+        PieChartTotalFragment fragm = (PieChartTotalFragment) fm.findFragmentById(R.id.pie_chart_total_fragment);
         fragm.getUserData();
     }
 
     private void setCoinNameAndSum() {
-        TextView coinName = (TextView)view.findViewById(R.id.coin_name);
-        TextView totalPrice = (TextView)view.findViewById(R.id.price);
+        TextView coinName = (TextView) view.findViewById(R.id.coin_name);
+        TextView totalPrice = (TextView) view.findViewById(R.id.price);
 
         coinName.setText(userValuta.getValuta().getShortName());
         double totalPriceCoin = 0;
-        ArrayList<UserValuta> userValutas = getUserValutas(userValuta,user);
-        for(UserValuta userValuta : userValutas){
+        ArrayList<UserValuta> userValutas = getUserValutas(userValuta, user);
+        for (UserValuta userValuta : userValutas) {
             totalPriceCoin += userValuta.getAmount() * userValuta.getValuta().getCurrentPrice();
         }
-        double roundedTotalPriceCoin  = (double) Math.round(totalPriceCoin * 100) / 100;
+        double roundedTotalPriceCoin = (double) Math.round(totalPriceCoin * 100) / 100;
         totalPrice.setText("Total: $" + Double.toString(roundedTotalPriceCoin));
     }
 
@@ -105,8 +105,8 @@ public class DetailsFragment extends Fragment {
 
     private ArrayList<UserValuta> getUserValutas(UserValuta userValuta, User user) {
         ArrayList<UserValuta> userValutas = new ArrayList<>();
-        for(UserValuta userValuta1 : user.getUserValutas()){
-            if(userValuta.getValuta().getName().equals(userValuta1.getValuta().getName())){
+        for (UserValuta userValuta1 : user.getUserValutas()) {
+            if (userValuta.getValuta().getName().equals(userValuta1.getValuta().getName())) {
                 userValutas.add(userValuta1);
             }
         }

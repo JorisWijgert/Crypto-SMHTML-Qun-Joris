@@ -12,22 +12,47 @@
         android:layout_height="match_parent">
 
         <EditText
-            android:id="@+id/editText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
-
-        <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/etAmount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/editText"
-            android:layout_marginTop="11dp"
+            android:layout_alignParentTop="true"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
+            android:hint="@string/amount"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/etPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/etAmount"
+            android:ems="10"
+            android:hint="@string/price"
+            android:inputType="numberDecimal" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etPrice"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="107dp"
+            android:text="@string/add"
+            android:onClick="btnAdd_clicked"/>
+
+        <TextView
+            android:id="@+id/tvError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etPrice"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="46dp"
+            android:text="@string/app_name"
+            android:textAlignment="center"
+            android:textColor="@color/Red"
+            android:visibility="invisible" />
+
+
     </RelativeLayout>
 </android.support.design.widget.NavigationView>

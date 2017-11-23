@@ -6,14 +6,29 @@ import android.content.Intent;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.ViewTreeObserver;
 import android.view.animation.AccelerateInterpolator;
+import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
+import android.widget.TextView;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.google.gson.Gson;
+
+import java.lang.reflect.Method;
+
+import crypto.org.crypto.Classes.User;
 import crypto.org.crypto.Classes.UserValuta;
+import crypto.org.crypto.Classes.UserValutaJson;
+import crypto.org.crypto.volley.AppController;
+import crypto.org.crypto.volley.BetterStringRequest;
 
 public class AddUservaluta extends AppCompatActivity {
     private UserValuta userValuta;
@@ -24,13 +39,40 @@ public class AddUservaluta extends AppCompatActivity {
     private int revealX;
     private int revealY;
 
+    private EditText etAmount;
+    private EditText etPrice;
+    private TextView tvError;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_uservaluta);
         userValuta = (UserValuta) getIntent().getSerializableExtra("userValuta");
         setTitle(String.format("Add new %s purchase", userValuta.getValuta().getName()));
+        handleIntent(savedInstanceState);
 
+        etAmount = findViewById(R.id.etAmount);
+        etPrice = findViewById(R.id.etPrice);
+        tvError = findViewById(R.id.tvError);
+
+        etPrice.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+
+                switch (actionId) {
+
+                    case EditorInfo.IME_ACTION_DONE:
+                        btnAdd_clicked(v);
+                        return true;
+
+                    default:
+                        return false;
+                }
+            }
+        });
+    }
+
+    private void handleIntent(Bundle savedInstanceState) {
         final Intent intent = getIntent();
         rootLayout = findViewById(R.id.root_layout);
 
@@ -100,9 +142,9 @@ public class AddUservaluta extends AppCompatActivity {
         switch (item.getItemId()) {
             case android.R.id.home:
                 // this takes the user 'back', as if they pressed the left-facing triangle icon on the main android toolbar.
-                    // if this doesn't work as desired, another possibility is to call
+                // if this doesn't work as desired, another possibility is to call
 
-                            //stopActivityTask();  // finish() here.
+                //stopActivityTask();  // finish() here.
                 onBackPressed();
                 return true;
             default:
@@ -111,8 +153,59 @@ public class AddUservaluta extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed(){
+    public void onBackPressed() {
         unRevealActivity();
         super.onBackPressed();
+    }
+
+    public void btnAdd_clicked(View view) {
+        if (etAmount.getText().toString().equals("")) {
+            tvError.setText(R.string.amountRq);
+            tvError.setVisibility(View.VISIBLE);
+            return;
+        }
+        if (etPrice.getText().toString().equals("")) {
+            tvError.setText(R.string.priceRq);
+            tvError.setVisibility(View.VISIBLE);
+            return;
+        }
+        double amount = 0;
+        double price = 0;
+
+        try {
+            amount = Double.parseDouble(etAmount.getText().toString());
+            price = Double.parseDouble(etPrice.getText().toString());
+        } catch (NumberFormatException nfe){
+            tvError.setText(R.string.wrongFormat);
+            tvError.setVisibility(View.VISIBLE);
+            return;
+        }
+        final UserValutaJson userValutaJson = new UserValutaJson(amount, price, userValuta.getValuta().getId(), 1);
+        String url = "https://i329146.venus.fhict.nl/api/uservalutas";
+        BetterStringRequest jsObjRequest = new BetterStringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                finish();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                tvError.setText(error.getMessage());
+                tvError.setVisibility(View.VISIBLE);
+
+            }
+        }) {
+            @Override
+            public byte[] getBody() throws AuthFailureError{
+                Gson gson = new Gson();
+                String json = gson.toJson(userValutaJson);
+                return gson.toJson(userValutaJson).getBytes();
+            }
+            @Override
+            public String getBodyContentType() {
+                return "application/json";
+            }
+        };
+        AppController.getInstance().addToRequestQueue(jsObjRequest);
     }
 }
