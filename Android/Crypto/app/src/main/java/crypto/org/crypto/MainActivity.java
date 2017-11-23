@@ -50,17 +50,11 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
 
         final RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
         mRecyclerView.addItemDecoration(new SimpleDividerItemDecoration(this));
-        // Lookup the swipe container view
         swipeContainer = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
-        // Setup refresh listener which triggers new data loading
         swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                // Your code to refresh the list here.
-                // Make sure you call swipeContainer.setRefreshing(false)
-                // once the network request has completed successfully.
                 retrieveData();
-                // specify an adapter (see also next example)
                 lvAdapater = new ValutaListAdapter(userValutas, getApplicationContext());
                 lvAdapater.setClickListener(MainActivity.this);
                 mRecyclerView.setAdapter(lvAdapater);
@@ -68,19 +62,11 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         });
 
         swipeContainer.setColorSchemeResources(R.color.colorPrimary, R.color.colorPrimary, R.color.colorPrimary);
-
         userValutas = new ArrayList<>();
-
-        // use this setting to improve performance if you know that changes
-        // in content do not change the layout size of the RecyclerView
         mRecyclerView.setHasFixedSize(true);
-
-        // use a linear layout manager
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
-
         retrieveData();
-        // specify an adapter (see also next example)
         lvAdapater = new ValutaListAdapter(userValutas, this);
         lvAdapater.setClickListener(this);
         mRecyclerView.setAdapter(lvAdapater);
