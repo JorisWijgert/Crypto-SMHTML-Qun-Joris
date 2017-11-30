@@ -1,10 +1,9 @@
 package crypto.org.crypto;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,11 +25,10 @@ public class GraphCardviewFragment extends Fragment {
         candleGraph.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentManager manager = getFragmentManager();
-                GraphFragment graphFragment = new GraphFragment();
-                manager.beginTransaction()
-                        .replace(R.id.graphFragment, graphFragment, graphFragment.getTag())
-                        .commit();
+                Bundle bundle = getArguments();
+                Intent mIntent = new Intent(getActivity(), GraphActivity.class);
+                mIntent.putExtra("bundle", bundle);
+                startActivity(mIntent);
             }
         });
         return view;

@@ -18,6 +18,6 @@
 
     <dimen name="horizontal_page_margin">@dimen/margin_medium</dimen>
     <dimen name="vertical_page_margin">@dimen/margin_medium</dimen>
-    <dimen name="uvlistheight">200dp</dimen>
+    <dimen name="uvlistheight">230dp</dimen>
 
 </resources>

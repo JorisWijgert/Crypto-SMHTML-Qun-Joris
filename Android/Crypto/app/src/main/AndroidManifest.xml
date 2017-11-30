@@ -32,6 +32,12 @@
             android:label=".AddUservaluta"
             android:parentActivityName=".SummaryActivity"
             android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="540e3638db8be0b507d86dd123924b3aaecbfe52" />
+
+        <activity android:name=".GraphActivity"></activity>
     </application>
 
 </manifest>
