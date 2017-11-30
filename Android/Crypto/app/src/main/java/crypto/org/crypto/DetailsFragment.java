@@ -16,6 +16,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.google.gson.Gson;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import crypto.org.crypto.Classes.User;
@@ -86,8 +87,9 @@ public class DetailsFragment extends Fragment {
         for (UserValuta userValuta : userValutas) {
             totalPriceCoin += userValuta.getAmount() * userValuta.getValuta().getCurrentPrice();
         }
-        double roundedTotalPriceCoin = (double) Math.round(totalPriceCoin * 100) / 100;
-        totalPrice.setText("Total: $" + Double.toString(roundedTotalPriceCoin));
+
+        DecimalFormat df = new DecimalFormat("#.00");
+        totalPrice.setText("Total: $" + df.format(totalPriceCoin));
     }
 
     private void fillUserValutas() {
