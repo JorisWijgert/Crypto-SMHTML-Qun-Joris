@@ -33,11 +33,14 @@
             android:parentActivityName=".SummaryActivity"
             android:screenOrientation="portrait" />
 
-        <meta-data
-            android:name="io.fabric.ApiKey"
-            android:value="540e3638db8be0b507d86dd123924b3aaecbfe52" />
-
-        <activity android:name=".GraphActivity"></activity>
+        <receiver android:name="SimpleWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/simple_widget_info" />
+        </receiver>
     </application>
 
 </manifest>

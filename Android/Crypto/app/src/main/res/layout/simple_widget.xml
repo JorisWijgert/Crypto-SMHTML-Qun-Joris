@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#55000000"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#88000000">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/imageView"
+            android:layout_toStartOf="@+id/actionButton"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="000"
+            android:textColor="@color/White"
+            android:textSize="@dimen/headerTextLargeSize"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_weight="1"
+            android:src="@mipmap/ic_launcher_foreground" />
+
+        <ImageButton
+            android:id="@+id/actionButton"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_weight="1"
+            android:background="@null"
+            android:src="@drawable/ic_refresh_white"
+            android:text="Refresh" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <ImageView
+                android:id="@+id/ivBtc"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:src="@drawable/bitcoin_logo" />
+
+            <TextView
+                android:id="@+id/btcWidgetText"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/ivBtc"
+                android:gravity="center"
+                android:text="Bitcoins"
+                android:textSize="@dimen/normalTextSize"
+                android:textColor="@color/White"
+                android:layout_marginRight="50dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <ImageView
+                android:id="@+id/ivEth"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:src="@drawable/ethereum_logo" />
+
+            <TextView
+                android:id="@+id/ethWidgetText"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/ivEth"
+                android:gravity="center"
+                android:text="Ethereums"
+                android:textSize="@dimen/normalTextSize"
+                android:textColor="@color/White"
+                android:layout_marginRight="50dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <ImageView
+                android:id="@+id/ivXrp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:src="@drawable/ripple_logo" />
+
+            <TextView
+                android:id="@+id/xrpWidgetText"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/ivXrp"
+                android:gravity="center"
+                android:text="Ripples"
+                android:textSize="@dimen/normalTextSize"
+                android:textColor="@color/White"
+                android:layout_marginRight="50dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <ImageView
+                android:id="@+id/ivLtc"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:src="@drawable/litecoin_logo" />
+
+            <TextView
+                android:id="@+id/ltcWidgetText"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/ivLtc"
+                android:gravity="center"
+                android:text="Litecoins"
+                android:textSize="@dimen/normalTextSize"
+                android:textColor="@color/White"
+                android:layout_marginRight="50dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <ImageView
+                android:id="@+id/ivBch"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:src="@drawable/bitcoin_cash_logo" />
+
+            <TextView
+                android:id="@+id/bchWidgetText"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/ivBch"
+                android:gravity="center"
+                android:text="Bitcoin Cashes"
+                android:textSize="@dimen/normalTextSize"
+                android:textColor="@color/White"
+                android:layout_marginRight="50dp"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>
