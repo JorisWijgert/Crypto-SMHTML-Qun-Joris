@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -25,6 +26,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.Serializable;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -42,6 +44,8 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     private SwipeRefreshLayout swipeContainer;
 
     private List<UserValuta> userValutas;
+    private TextView tvName;
+    private TextView tvPortfolioTotal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +65,9 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
             }
         });
 
+        tvName = findViewById(R.id.tvName);
+        tvPortfolioTotal = findViewById(R.id.tvPortfolioTotal);
+
         swipeContainer.setColorSchemeResources(R.color.colorPrimary, R.color.colorPrimary, R.color.colorPrimary);
         userValutas = new ArrayList<>();
         mRecyclerView.setHasFixedSize(true);
@@ -79,12 +86,13 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         BetterStringRequest jsObjRequest = new BetterStringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-
+                double total = 0d;
                 Gson gson = new Gson();
                 User user = gson.fromJson(response, User.class);
-
+                tvName.setText(String.format("Portfolio of %s", user.getUsername()));
 
                 for (UserValuta userValuta : user.getUserValutas()) {
+                    total += userValuta.getAmount() * userValuta.getValuta().getCurrentPrice();
                     UserValuta otherUv = checkUserValutasContains(userValuta);
                     if (otherUv == null) {
                         otherUv = userValuta;
@@ -93,7 +101,9 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
                         otherUv.setAmount(otherUv.getAmount() + userValuta.getAmount());
 
                 }
+                DecimalFormat df = new DecimalFormat("#.00");
 
+                tvPortfolioTotal.setText("$ " + df.format(total));
                 lvAdapater.notifyDataSetChanged();
                 swipeContainer.setRefreshing(false);
             }
