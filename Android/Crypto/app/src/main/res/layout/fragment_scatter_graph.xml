@@ -1,0 +1,13 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="crypto.org.crypto.ScatterGraphFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <com.github.mikephil.charting.charts.ScatterChart
+        android:id="@+id/chart_scatter_graph"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</FrameLayout>

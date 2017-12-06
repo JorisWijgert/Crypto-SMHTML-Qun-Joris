@@ -7,7 +7,7 @@ package crypto.org.crypto;
 public enum ChartType {
     LINE,
     CANDLE,
-    Bar,
+    BAR,
     SCATTER,
     RADARCHART
 }

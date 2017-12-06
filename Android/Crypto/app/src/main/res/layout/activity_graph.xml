@@ -7,5 +7,9 @@
     tools:context="crypto.org.crypto.GraphActivity"
     >
 
+    <FrameLayout
+        android:id="@+id/line_graph_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </RelativeLayout>

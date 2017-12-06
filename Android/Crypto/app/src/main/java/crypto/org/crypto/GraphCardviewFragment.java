@@ -21,13 +21,39 @@ public class GraphCardviewFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_graph_card_view, container, false);
+        final Bundle bundle = getArguments();
+        final Intent mIntent = new Intent(getActivity(), GraphActivity.class);
+        mIntent.putExtra("bundle", bundle);
+
         CardView candleGraph = (CardView) view.findViewById(R.id.cardviewCandle);
         candleGraph.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bundle bundle = getArguments();
-                Intent mIntent = new Intent(getActivity(), GraphActivity.class);
-                mIntent.putExtra("bundle", bundle);
+                mIntent.putExtra("type", "candle");
+                startActivity(mIntent);
+            }
+        });
+        CardView lineGraph = view.findViewById(R.id.cardviewPlot);
+        lineGraph.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mIntent.putExtra("type", "line");
+                startActivity(mIntent);
+            }
+        });
+        CardView cardviewBar = view.findViewById(R.id.cardviewBar);
+        cardviewBar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mIntent.putExtra("type", "bar");
+                startActivity(mIntent);
+            }
+        });
+        CardView cardViewScatter = view.findViewById(R.id.cardviewScatter);
+        cardViewScatter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mIntent.putExtra("type", "scatter");
                 startActivity(mIntent);
             }
         });
