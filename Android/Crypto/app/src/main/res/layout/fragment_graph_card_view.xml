@@ -47,7 +47,7 @@
                         android:id="@+id/contentCandle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="CandleGraph"
+                        android:text="Candle graph"
                         android:textAlignment="center"
                         android:textSize="@dimen/headerTextSize" />
                 </LinearLayout>
@@ -86,7 +86,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="@dimen/margin_medium"
-                        android:text="Lijngrafiek"
+                        android:text="Line graph"
                         android:textAlignment="center"
                         android:textSize="@dimen/headerTextSize" />
                 </LinearLayout>
@@ -125,7 +125,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="@dimen/margin_medium"
-                        android:text="Bargrafiek"
+                        android:text="Bar graph"
                         android:textAlignment="center"
                         android:textSize="@dimen/headerTextSize" />
                 </LinearLayout>
@@ -165,7 +165,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="@dimen/margin_medium"
-                        android:text="TBD"
+                        android:text="Coming soon"
                         android:textAlignment="center"
                         android:textSize="@dimen/headerTextSize" />
                 </LinearLayout>
@@ -205,7 +205,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="@dimen/margin_medium"
-                        android:text="TBD"
+                        android:text="Coming soon"
                         android:textAlignment="center"
                         android:textSize="@dimen/headerTextSize" />
                 </LinearLayout>

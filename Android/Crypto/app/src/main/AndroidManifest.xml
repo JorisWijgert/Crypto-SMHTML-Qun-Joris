@@ -46,7 +46,8 @@
             android:name="io.fabric.ApiKey"
             android:value="540e3638db8be0b507d86dd123924b3aaecbfe52" />
 
-        <activity android:name=".GraphActivity"></activity>
+        <activity android:name=".GraphActivity"
+            android:parentActivityName=".SummaryActivity"/>
     </application>
 
 </manifest>
