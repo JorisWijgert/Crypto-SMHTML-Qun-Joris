@@ -51,9 +51,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="AT4-cw-S27"/>
                     </view>
-                    <navigationItem key="navigationItem" title="SimpleMeal" id="VCs-CS-GNL">
-                        <barButtonItem key="backBarButtonItem" title="Terug" id="mJX-EV-hPg"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="SimpleMeal" id="VCs-CS-GNL"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2eZ-wo-efH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
