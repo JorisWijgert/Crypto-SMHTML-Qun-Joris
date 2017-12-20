@@ -2,8 +2,8 @@
 //  SimpleMealUITests.swift
 //  SimpleMealUITests
 //
-//  Created by Qunfong on 13/12/2017.
-//  Copyright © 2017 Qunfong. All rights reserved.
+//  Created by Fhict on 20-12-17.
+//  Copyright © 2017 SimpleMeal. All rights reserved.
 //
 
 import XCTest
