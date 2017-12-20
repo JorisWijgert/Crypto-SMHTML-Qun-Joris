@@ -188,6 +188,11 @@
 			isa = PBXProject;
 			attributes = {
 				ORGANIZATIONNAME = "___FULLUSERNAME___";
+				TargetAttributes = {
+					1B6CA68C5E33A4A25E4B7A60 = {
+						DevelopmentTeam = H5DDT55EN4;
+					};
+				};
 			};
 			buildConfigurationList = 1B6CA7B4D80D076F56CDFB16 /* Build configuration list for PBXProject "SimpleMeal" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -398,10 +403,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = H5DDT55EN4;
 				INFOPLIST_FILE = SimpleMeal/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SimpleMeal.SimpleMeal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -461,10 +469,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = H5DDT55EN4;
 				INFOPLIST_FILE = SimpleMeal/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SimpleMeal.SimpleMeal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -493,6 +504,7 @@
 				1B6CAF27613DE3829EB9DF36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1B6CA7B4D80D076F56CDFB16 /* Build configuration list for PBXProject "SimpleMeal" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +522,7 @@
 				1B6CA82B5FA6EC538FEC4F9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1B6CAF1FC8A8CC0590A570FD /* Build configuration list for PBXNativeTarget "SimpleMealTests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +531,7 @@
 				1B6CA6E2FBEA9D059F43250F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
