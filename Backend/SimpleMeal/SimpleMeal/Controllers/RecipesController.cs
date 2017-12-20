@@ -85,7 +85,7 @@ namespace SimpleMeal.Controllers
             return foundRecipes;
         }
 
-        private List<SupermarketProduct> CheckIfSupermarketContainsProducts(ICollection<SupermarketProduct> supermarketProduct, List<Product> products)
+        public static List<SupermarketProduct> CheckIfSupermarketContainsProducts(ICollection<SupermarketProduct> supermarketProduct, List<Product> products)
         {
             List<SupermarketProduct> foundProducts = new List<SupermarketProduct>();
             foreach (SupermarketProduct supermarketProductItem in supermarketProduct)

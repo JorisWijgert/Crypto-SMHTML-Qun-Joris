@@ -9,7 +9,6 @@ namespace SimpleMeal.Models
     {
         public int Id { get; set; }
         public double Price { get; set; }
-        public virtual Supermarket Supermarket { get; set; }
         public virtual Product Product { get; set; }
 
     }
