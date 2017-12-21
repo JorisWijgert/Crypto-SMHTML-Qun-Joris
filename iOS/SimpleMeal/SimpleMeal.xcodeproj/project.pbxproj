@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F5B27AE71FEBB54F008F9778 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B27AE61FEBB54F008F9778 /* Profile.swift */; };
+		F5B27AE91FEBB6A0008F9778 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B27AE81FEBB6A0008F9778 /* Recipe.swift */; };
+		F5B27AEB1FEBB7D7008F9778 /* RecipeProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B27AEA1FEBB7D7008F9778 /* RecipeProduct.swift */; };
+		F5B27AED1FEBB810008F9778 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B27AEC1FEBB810008F9778 /* Product.swift */; };
 		F5CA770A1FEA965400EC4A6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CA77091FEA965400EC4A6B /* AppDelegate.swift */; };
 		F5CA770C1FEA965400EC4A6B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CA770B1FEA965400EC4A6B /* ViewController.swift */; };
 		F5CA770F1FEA965400EC4A6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5CA770D1FEA965400EC4A6B /* Main.storyboard */; };
@@ -34,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F5B27AE61FEBB54F008F9778 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		F5B27AE81FEBB6A0008F9778 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		F5B27AEA1FEBB7D7008F9778 /* RecipeProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeProduct.swift; sourceTree = "<group>"; };
+		F5B27AEC1FEBB810008F9778 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		F5CA77061FEA965300EC4A6B /* SimpleMeal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleMeal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5CA77091FEA965400EC4A6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5CA770B1FEA965400EC4A6B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +111,10 @@
 				F5CA77101FEA965400EC4A6B /* Assets.xcassets */,
 				F5CA77121FEA965400EC4A6B /* LaunchScreen.storyboard */,
 				F5CA77151FEA965400EC4A6B /* Info.plist */,
+				F5B27AE61FEBB54F008F9778 /* Profile.swift */,
+				F5B27AE81FEBB6A0008F9778 /* Recipe.swift */,
+				F5B27AEA1FEBB7D7008F9778 /* RecipeProduct.swift */,
+				F5B27AEC1FEBB810008F9778 /* Product.swift */,
 			);
 			path = SimpleMeal;
 			sourceTree = "<group>";
@@ -259,8 +271,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5B27AEB1FEBB7D7008F9778 /* RecipeProduct.swift in Sources */,
 				F5CA770C1FEA965400EC4A6B /* ViewController.swift in Sources */,
+				F5B27AE71FEBB54F008F9778 /* Profile.swift in Sources */,
 				F5CA770A1FEA965400EC4A6B /* AppDelegate.swift in Sources */,
+				F5B27AE91FEBB6A0008F9778 /* Recipe.swift in Sources */,
+				F5B27AED1FEBB810008F9778 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
