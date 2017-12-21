@@ -136,7 +136,7 @@ Kies je recept!</string>
                     </view>
                     <navigationItem key="navigationItem" title="SimpleMeal Filter" id="CW4-nD-D9T">
                         <barButtonItem key="backBarButtonItem" title="Terug" id="znm-64-7wz"/>
-                        <barButtonItem key="rightBarButtonItem" title="Zoek" id="oVe-Mx-jX9">
+                        <barButtonItem key="rightBarButtonItem" title="Zoek" style="done" id="oVe-Mx-jX9">
                             <connections>
                                 <segue destination="cAH-p4-Ukg" kind="show" id="V8B-ju-bfp"/>
                             </connections>
@@ -248,7 +248,7 @@ of iets</string>
                     </view>
                     <navigationItem key="navigationItem" title="Recept" id="f4u-0b-DUB">
                         <barButtonItem key="backBarButtonItem" title="Terug" id="gC0-cF-NGs"/>
-                        <barButtonItem key="rightBarButtonItem" title="Selecteer" id="odf-Xl-jvG">
+                        <barButtonItem key="rightBarButtonItem" title="Selecteer" style="done" id="odf-Xl-jvG">
                             <connections>
                                 <segue destination="f8O-yZ-7K0" kind="show" id="Q2X-K2-eaz"/>
                             </connections>
