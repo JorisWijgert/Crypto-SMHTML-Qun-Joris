@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F51610C41FFE6088002A42BA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51610C31FFE6088002A42BA /* SearchViewController.swift */; };
+		F51610C61FFE65D2002A42BA /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51610C51FFE65D2002A42BA /* CustomError.swift */; };
+		F51610C81FFE69CC002A42BA /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51610C71FFE69CC002A42BA /* RecipeViewController.swift */; };
 		F579DD651FEBDBD2007FFAFC /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F579DD641FEBDBD2007FFAFC /* HistoryCell.swift */; };
 		F5B27AE71FEBB54F008F9778 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B27AE61FEBB54F008F9778 /* Profile.swift */; };
 		F5B27AE91FEBB6A0008F9778 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B27AE81FEBB6A0008F9778 /* Recipe.swift */; };
@@ -39,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F51610C31FFE6088002A42BA /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		F51610C51FFE65D2002A42BA /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		F51610C71FFE69CC002A42BA /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		F579DD641FEBDBD2007FFAFC /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		F5B27AE61FEBB54F008F9778 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		F5B27AE81FEBB6A0008F9778 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
@@ -106,6 +112,8 @@
 		F579DD631FEBDB7B007FFAFC /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				F51610C31FFE6088002A42BA /* SearchViewController.swift */,
+				F51610C71FFE69CC002A42BA /* RecipeViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -142,6 +150,7 @@
 				F5CA770D1FEA965400EC4A6B /* Main.storyboard */,
 				F5CA77121FEA965400EC4A6B /* LaunchScreen.storyboard */,
 				F5CA77151FEA965400EC4A6B /* Info.plist */,
+				F51610C51FFE65D2002A42BA /* CustomError.swift */,
 			);
 			path = SimpleMeal;
 			sourceTree = "<group>";
@@ -300,8 +309,11 @@
 			files = (
 				F5B27AEB1FEBB7D7008F9778 /* RecipeProduct.swift in Sources */,
 				F579DD651FEBDBD2007FFAFC /* HistoryCell.swift in Sources */,
+				F51610C41FFE6088002A42BA /* SearchViewController.swift in Sources */,
 				F5CA770C1FEA965400EC4A6B /* ViewController.swift in Sources */,
+				F51610C81FFE69CC002A42BA /* RecipeViewController.swift in Sources */,
 				F5B27AE71FEBB54F008F9778 /* Profile.swift in Sources */,
+				F51610C61FFE65D2002A42BA /* CustomError.swift in Sources */,
 				F5CA770A1FEA965400EC4A6B /* AppDelegate.swift in Sources */,
 				F5B27AE91FEBB6A0008F9778 /* Recipe.swift in Sources */,
 				F5B27AED1FEBB810008F9778 /* Product.swift in Sources */,

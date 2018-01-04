@@ -136,7 +136,7 @@ Kies je recept!</string>
         <!--SimpleMeal Filter-->
         <scene sceneID="pcg-tu-fcy">
             <objects>
-                <viewController id="a14-L1-vNp" sceneMemberID="viewController">
+                <viewController id="a14-L1-vNp" customClass="SearchViewController" customModule="SimpleMeal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="inr-Kd-Z4a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -174,21 +174,21 @@ Kies je recept!</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XiY-ZB-dd6">
                                 <rect key="frame" x="190" y="234" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nxs-yH-EXX">
                                 <rect key="frame" x="190" y="284" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -198,10 +198,15 @@ Kies je recept!</string>
                         <barButtonItem key="backBarButtonItem" title="Terug" id="znm-64-7wz"/>
                         <barButtonItem key="rightBarButtonItem" title="Zoek" style="done" id="oVe-Mx-jX9">
                             <connections>
-                                <segue destination="cAH-p4-Ukg" kind="show" id="V8B-ju-bfp"/>
+                                <action selector="SearchButtonAction:" destination="a14-L1-vNp" id="4hQ-Zs-hf1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="AmountPersonsTextField" destination="XiY-ZB-dd6" id="nlA-76-HA0"/>
+                        <outlet property="BudgetTextField" destination="nxs-yH-EXX" id="hdK-5B-um8"/>
+                        <outlet property="PrepTimeTextField" destination="gA6-R9-Ocw" id="IIa-wM-8oM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xcx-ci-3gX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -210,7 +215,7 @@ Kies je recept!</string>
         <!--Gevonden recepten-->
         <scene sceneID="zZ5-y2-mTI">
             <objects>
-                <viewController id="cAH-p4-Ukg" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecipeViewController" id="cAH-p4-Ukg" customClass="RecipeViewController" customModule="SimpleMeal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="24A-c6-VR7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
