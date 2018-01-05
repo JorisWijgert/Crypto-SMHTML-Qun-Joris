@@ -232,15 +232,36 @@ Kies je recept!</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Bu8-hb-mhZ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeCell" id="Bu8-hb-mhZ" customClass="RecipeTableViewCell" customModule="SimpleMeal" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bu8-hb-mhZ" id="C3r-st-ht9">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uZC-sg-z5m">
+                                                    <rect key="frame" x="249" y="0.0" width="111" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgx-7z-Mfr">
+                                                    <rect key="frame" x="15" y="11" width="360" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="RecipeImageView" destination="uZC-sg-z5m" id="sEc-Cj-G79"/>
+                                            <outlet property="RecipeNameLabel" destination="bgx-7z-Mfr" id="H0z-Q2-1SL"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="cAH-p4-Ukg" id="Phq-Y3-IdB"/>
+                                    <outlet property="delegate" destination="cAH-p4-Ukg" id="KYN-71-5oX"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -250,7 +271,7 @@ Kies je recept!</string>
                         <barButtonItem key="backBarButtonItem" title="Terug" id="O4n-Vu-5co"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="vTo-Vv-5la" kind="show" id="Egm-Ok-doD"/>
+                        <outlet property="RecipeTableView" destination="wZX-aU-uSM" id="XxC-or-EwX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gez-mh-XzG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -260,7 +281,7 @@ Kies je recept!</string>
         <!--Recept-->
         <scene sceneID="cKb-yV-5E7">
             <objects>
-                <viewController id="vTo-Vv-5la" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecipeDetailController" id="vTo-Vv-5la" customClass="RecipeDetailController" customModule="SimpleMeal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nLJ-bD-xcT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -322,7 +343,7 @@ of iets</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qqW-br-T5r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2757.5999999999999" y="62.518740629685162"/>
+            <point key="canvasLocation" x="2626" y="69"/>
         </scene>
         <!--Supermarkten-->
         <scene sceneID="7GY-Qw-ynH">
@@ -357,7 +378,7 @@ of iets</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ND4-g6-y4D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3543" y="69"/>
+            <point key="canvasLocation" x="3880.8000000000002" y="68.815592203898049"/>
         </scene>
         <!--Bestelling-->
         <scene sceneID="V0a-GW-cns">
@@ -425,7 +446,7 @@ of iets</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LFn-vp-EPB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4284" y="-584.25787106446785"/>
+            <point key="canvasLocation" x="4623.1999999999998" y="-584.25787106446785"/>
         </scene>
         <!--Boodschappenlijst-->
         <scene sceneID="DZK-LZ-e6x">
@@ -454,7 +475,7 @@ of iets</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yEe-nm-Izy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4272" y="70"/>
+            <point key="canvasLocation" x="4610.3999999999996" y="69.715142428785612"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0td-7u-yYS">
@@ -474,6 +495,25 @@ of iets</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8rn-56-eot" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-294.39999999999998" y="-65.667166416791616"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XWJ-3I-UGi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oUq-JG-qkt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GcR-1Q-5E1">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.75673717129999996" blue="0.012023432989999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vTo-Vv-5la" kind="relationship" relationship="rootViewController" id="Hyh-Do-CpV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V78-XO-bX4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2625" y="-619"/>
         </scene>
     </scenes>
 </document>

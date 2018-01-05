@@ -8,32 +8,70 @@
 
 import UIKit
 
-class RecipeViewController: UIViewController {
+class RecipeTableViewCell: UITableViewCell {
+    @IBOutlet weak var RecipeNameLabel: UILabel!
+    @IBOutlet weak var RecipeImageView: UIImageView!
+    
+    func updateUI(recipe: Recipe){
+        RecipeNameLabel.text = recipe.Name;
+        
+        if let url = URL(string: recipe.ImageUrl){
+            RecipeImageView.contentMode = .scaleAspectFit
+            downloadImage(url: url)
+        }
+    }
+    
+    func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            completion(data, response, error)
+            }.resume()
+    }
+    
+    func downloadImage(url: URL) {
+        print("Download Started")
+        getDataFromUrl(url: url) { data, response, error in
+            guard let data = data, error == nil else { return }
+            print(response?.suggestedFilename ?? url.lastPathComponent)
+            print("Download Finished")
+            DispatchQueue.main.async() {
+                self.RecipeImageView.image = UIImage(data: data)
+            }
+        }
+    }
+}
+
+class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var prepTime = ""
     var amountPersons = ""
     var budget = ""
+    var recipes = [Recipe]()
+    
+    @IBOutlet weak var RecipeTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Time/Persons/Budget
-        
+
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         let jsonUrlString = "https://i329146.venus.fhict.nl/api/recipes/" + prepTime + "/" + amountPersons + "/" + budget
         guard let url = URL(string: jsonUrlString) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, err) in
             guard let data = data else { return }
             do {
-                let recipes = try JSONDecoder().decode([Recipe].self, from: data)
-                print(recipes)
+                self.recipes = try JSONDecoder().decode([Recipe].self, from: data)
+                
                 DispatchQueue.main.async {
+                    self.RecipeTableView.reloadData()
                 }
                 
             } catch let jsonErr {
                 print("Error serializing json:", jsonErr)
             }
             }.resume()
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,15 +79,28 @@ class RecipeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - TableView
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return recipes.count
     }
-    */
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeCell", for: indexPath) as? RecipeTableViewCell{
+            var recipe = recipes[indexPath.row] as! Recipe
+            cell.updateUI(recipe: recipe)
+            return cell
+        } else {
+            return UITableViewCell()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+
+        
+        let recipeViewController = storyboard?.instantiateViewController(withIdentifier: "RecipeDetailController") as! RecipeDetailController
+        navigationController?.pushViewController(recipeViewController, animated: true)
+    }
+
 
 }
