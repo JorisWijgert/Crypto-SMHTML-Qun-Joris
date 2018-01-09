@@ -340,10 +340,21 @@ of iets</string>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="RecipeImage" destination="g05-0V-0l0" id="aFS-uK-Zpe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qqW-br-T5r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2626" y="69"/>
+        </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="PkL-Qh-KMq">
+            <objects>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="qoh-H9-Cis" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dvA-Z2-guk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3289" y="-357"/>
         </scene>
         <!--Supermarkten-->
         <scene sceneID="7GY-Qw-ynH">
