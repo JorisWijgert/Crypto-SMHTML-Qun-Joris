@@ -15,7 +15,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet weak var tvHistory: UITableView!
     @IBOutlet weak var lblCurrentRecipe: UILabel!
-    
     var historyArray = [Recipe]()
     
     override func viewDidLoad() {
@@ -65,10 +64,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        let recipeViewController = storyboard?.instantiateViewController(withIdentifier: "RecipeDetailController") as! RecipeDetailController
+        recipeViewController.recipe = historyArray[indexPath.row] as! Recipe
+        navigationController?.pushViewController(recipeViewController, animated: true)
+    }
+    
     @IBAction func makeMealButtonClick(_ sender:Any)
     {
         
     }
+    
     
 }
 
