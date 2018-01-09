@@ -341,6 +341,7 @@ of iets</string>
                         <barButtonItem key="backBarButtonItem" title="Terug" id="gC0-cF-NGs"/>
                         <barButtonItem key="rightBarButtonItem" title="Selecteer" style="done" id="odf-Xl-jvG">
                             <connections>
+                                <action selector="SelectButton:" destination="9LM-4x-dvS" id="v6F-fd-l4p"/>
                                 <segue destination="f8O-yZ-7K0" kind="show" id="Q2X-K2-eaz"/>
                             </connections>
                         </barButtonItem>
@@ -350,6 +351,7 @@ of iets</string>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qqW-br-T5r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="9LM-4x-dvS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2626" y="69"/>
         </scene>

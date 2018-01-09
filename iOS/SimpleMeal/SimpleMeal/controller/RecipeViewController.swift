@@ -42,10 +42,13 @@ class RecipeTableViewCell: UITableViewCell {
 
 class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+  
+    
     var prepTime = ""
     var amountPersons = ""
     var budget = ""
     var recipes = [Recipe]()
+    var showSelectButton = true
     
     @IBOutlet weak var RecipeTableView: UITableView!
     
