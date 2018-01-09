@@ -12,7 +12,9 @@ import AVFoundation
 
 class RecipeDetailController: UIViewController {
 
-
+    var recipe:Recipe?
+   
+    
     @IBOutlet weak var RecipeImage: UIImageView!
     
     @objc func tapDetected(){
@@ -31,6 +33,10 @@ class RecipeDetailController: UIViewController {
         let singleTap = UITapGestureRecognizer(target: self, action: Selector("tapDetected"))
         RecipeImage.isUserInteractionEnabled = true
         RecipeImage.addGestureRecognizer(singleTap)
+        if let url = URL(string: recipe!.ImageUrl){
+            RecipeImage.contentMode = .scaleAspectFit
+            downloadImage(url: url)
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -38,7 +44,24 @@ class RecipeDetailController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            completion(data, response, error)
+            }.resume()
+    }
     
+    func downloadImage(url: URL) {
+        print("Download Started")
+        getDataFromUrl(url: url) { data, response, error in
+            guard let data = data, error == nil else { return }
+            print(response?.suggestedFilename ?? url.lastPathComponent)
+            print("Download Finished")
+            DispatchQueue.main.async() {
+                self.RecipeImage.image = UIImage(data: data)
+            }
+        }
+    }
     
 
     /*
