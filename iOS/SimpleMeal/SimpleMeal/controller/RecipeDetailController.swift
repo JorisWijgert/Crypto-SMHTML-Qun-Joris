@@ -14,8 +14,11 @@ class RecipeDetailController: UIViewController {
 
     var recipe:Recipe?
    
-    
     @IBOutlet weak var RecipeImage: UIImageView!
+    @IBOutlet weak var PrepTimeLabel: UILabel!
+    @IBOutlet weak var BudgetLabel: UILabel!
+    @IBOutlet weak var RecipeDescLabel: UILabel!
+    @IBOutlet weak var Scrollview: UIScrollView!
     
     @objc func tapDetected(){
         let videoURL = URL(string: "https://flvpd.vtm.be/videocms/vmma/2015/10/15/201510151531051010034065084005056B7305C0000003648B00000D0F064314.mp4")
@@ -29,7 +32,7 @@ class RecipeDetailController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let singleTap = UITapGestureRecognizer(target: self, action: Selector("tapDetected"))
         RecipeImage.isUserInteractionEnabled = true
         RecipeImage.addGestureRecognizer(singleTap)
@@ -37,7 +40,16 @@ class RecipeDetailController: UIViewController {
             RecipeImage.contentMode = .scaleAspectFit
             downloadImage(url: url)
         }
+        PrepTimeLabel.text = String(format: "%d min.", recipe!.TimeMin)
+        // TODO: call budget
+        RecipeDescLabel.text = recipe!.Description
+        RecipeDescLabel.numberOfLines=0
+        RecipeDescLabel.sizeToFit()
+        self.navigationItem.title=recipe!.Name
         // Do any additional setup after loading the view.
+        let maxLabelWidth: CGFloat = 228
+        let neededSize = RecipeDescLabel.sizeThatFits(CGSize(width: maxLabelWidth, height: CGFloat.greatestFiniteMagnitude))
+                Scrollview.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+neededSize.height)
     }
 
     override func didReceiveMemoryWarning() {
