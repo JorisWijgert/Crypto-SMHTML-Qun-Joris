@@ -96,9 +96,8 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-
-        
         let recipeViewController = storyboard?.instantiateViewController(withIdentifier: "RecipeDetailController") as! RecipeDetailController
+        recipeViewController.recipe = recipes[indexPath.row] as! Recipe
         navigationController?.pushViewController(recipeViewController, animated: true)
     }
 
