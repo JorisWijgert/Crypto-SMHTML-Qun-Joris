@@ -75,7 +75,13 @@ class RecipeDetailController: UIViewController {
         }
     }
     
-
+    @IBAction func SelectClick(_ sender: Any) {
+        let supermarketController = storyboard?.instantiateViewController(withIdentifier: "SupermarketListController") as! SupermarketListController
+        supermarketController.recipe = self.recipe!
+        navigationController?.pushViewController(supermarketController, animated: true)
+    }
+    
+    
     /*
     // MARK: - Navigation
 

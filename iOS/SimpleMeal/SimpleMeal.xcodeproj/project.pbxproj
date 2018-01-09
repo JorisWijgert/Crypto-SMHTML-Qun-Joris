@@ -12,6 +12,8 @@
 		F51610C81FFE69CC002A42BA /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51610C71FFE69CC002A42BA /* RecipeViewController.swift */; };
 		F53F2EBB1FFF7F59001DE4F3 /* RecipeDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53F2EBA1FFF7F59001DE4F3 /* RecipeDetailController.swift */; };
 		F55483B82004BDE6001649A5 /* VideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55483B72004BDE6001649A5 /* VideoPlayer.swift */; };
+		F55483BA2004E9F8001649A5 /* SupermarketListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55483B92004E9F8001649A5 /* SupermarketListController.swift */; };
+		F55483BC2004ED96001649A5 /* Supermarket.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55483BB2004ED96001649A5 /* Supermarket.swift */; };
 		F579DD651FEBDBD2007FFAFC /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F579DD641FEBDBD2007FFAFC /* HistoryCell.swift */; };
 		F5B27AE71FEBB54F008F9778 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B27AE61FEBB54F008F9778 /* Profile.swift */; };
 		F5B27AE91FEBB6A0008F9778 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B27AE81FEBB6A0008F9778 /* Recipe.swift */; };
@@ -49,6 +51,8 @@
 		F51610C71FFE69CC002A42BA /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		F53F2EBA1FFF7F59001DE4F3 /* RecipeDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailController.swift; sourceTree = "<group>"; };
 		F55483B72004BDE6001649A5 /* VideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayer.swift; sourceTree = "<group>"; };
+		F55483B92004E9F8001649A5 /* SupermarketListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupermarketListController.swift; sourceTree = "<group>"; };
+		F55483BB2004ED96001649A5 /* Supermarket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supermarket.swift; sourceTree = "<group>"; };
 		F579DD641FEBDBD2007FFAFC /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		F5B27AE61FEBB54F008F9778 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		F5B27AE81FEBB6A0008F9778 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 				F5B27AE81FEBB6A0008F9778 /* Recipe.swift */,
 				F5B27AEA1FEBB7D7008F9778 /* RecipeProduct.swift */,
 				F5B27AEC1FEBB810008F9778 /* Product.swift */,
+				F55483BB2004ED96001649A5 /* Supermarket.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 				F51610C71FFE69CC002A42BA /* RecipeViewController.swift */,
 				F53F2EBA1FFF7F59001DE4F3 /* RecipeDetailController.swift */,
 				F55483B72004BDE6001649A5 /* VideoPlayer.swift */,
+				F55483B92004E9F8001649A5 /* SupermarketListController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -316,6 +322,7 @@
 				F5B27AEB1FEBB7D7008F9778 /* RecipeProduct.swift in Sources */,
 				F579DD651FEBDBD2007FFAFC /* HistoryCell.swift in Sources */,
 				F51610C41FFE6088002A42BA /* SearchViewController.swift in Sources */,
+				F55483BA2004E9F8001649A5 /* SupermarketListController.swift in Sources */,
 				F5CA770C1FEA965400EC4A6B /* ViewController.swift in Sources */,
 				F51610C81FFE69CC002A42BA /* RecipeViewController.swift in Sources */,
 				F53F2EBB1FFF7F59001DE4F3 /* RecipeDetailController.swift in Sources */,
@@ -325,6 +332,7 @@
 				F5CA770A1FEA965400EC4A6B /* AppDelegate.swift in Sources */,
 				F5B27AE91FEBB6A0008F9778 /* Recipe.swift in Sources */,
 				F5B27AED1FEBB810008F9778 /* Product.swift in Sources */,
+				F55483BC2004ED96001649A5 /* Supermarket.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
