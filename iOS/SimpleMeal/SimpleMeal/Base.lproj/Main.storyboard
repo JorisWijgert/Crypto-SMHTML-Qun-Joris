@@ -360,6 +360,7 @@ of iets</string>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qqW-br-T5r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="9LM-4x-dvS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2624.8000000000002" y="68.815592203898049"/>
         </scene>
