@@ -18,6 +18,7 @@
 		F55483BA2004E9F8001649A5 /* SupermarketListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55483B92004E9F8001649A5 /* SupermarketListController.swift */; };
 		F55483BC2004ED96001649A5 /* Supermarket.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55483BB2004ED96001649A5 /* Supermarket.swift */; };
 		F579DD651FEBDBD2007FFAFC /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F579DD641FEBDBD2007FFAFC /* HistoryCell.swift */; };
+		F580053120061AE8007DB42C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F580053020061AE8007DB42C /* Images.xcassets */; };
 		F5B27AE71FEBB54F008F9778 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B27AE61FEBB54F008F9778 /* Profile.swift */; };
 		F5B27AE91FEBB6A0008F9778 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B27AE81FEBB6A0008F9778 /* Recipe.swift */; };
 		F5B27AEB1FEBB7D7008F9778 /* RecipeProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B27AEA1FEBB7D7008F9778 /* RecipeProduct.swift */; };
@@ -65,6 +66,7 @@
 		F55483B92004E9F8001649A5 /* SupermarketListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupermarketListController.swift; sourceTree = "<group>"; };
 		F55483BB2004ED96001649A5 /* Supermarket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supermarket.swift; sourceTree = "<group>"; };
 		F579DD641FEBDBD2007FFAFC /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
+		F580053020061AE8007DB42C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F5B27AE61FEBB54F008F9778 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		F5B27AE81FEBB6A0008F9778 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		F5B27AEA1FEBB7D7008F9778 /* RecipeProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeProduct.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				F5CA77121FEA965400EC4A6B /* LaunchScreen.storyboard */,
 				F5CA77151FEA965400EC4A6B /* Info.plist */,
 				F51610C51FFE65D2002A42BA /* CustomError.swift */,
+				F580053020061AE8007DB42C /* Images.xcassets */,
 			);
 			path = SimpleMeal;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5CA77141FEA965400EC4A6B /* LaunchScreen.storyboard in Resources */,
+				F580053120061AE8007DB42C /* Images.xcassets in Resources */,
 				F5CA77111FEA965400EC4A6B /* Assets.xcassets in Resources */,
 				F5CA770F1FEA965400EC4A6B /* Main.storyboard in Resources */,
 			);

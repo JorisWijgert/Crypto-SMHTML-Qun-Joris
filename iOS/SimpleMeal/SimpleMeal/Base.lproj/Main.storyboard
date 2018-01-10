@@ -394,7 +394,27 @@ of iets</string>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPe-Zw-yna">
+                                            <rect key="frame" x="279" y="6" width="25" height="25"/>
+                                            <state key="normal" title="Button" image="shoppingcart"/>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8c-Nt-1ne">
+                                            <rect key="frame" x="320" y="6" width="25" height="25"/>
+                                            <state key="normal" title="Button" image="tasks"/>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AuQ-Ge-Khv">
+                                            <rect key="frame" x="240" y="6" width="25" height="25"/>
+                                            <state key="normal" title="Button" image="home"/>
+                                        </button>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="AuQ-Ge-Khv" firstAttribute="top" secondItem="4zN-5o-9Ky" secondAttribute="top" constant="6" id="8Xl-Rw-cnU"/>
+                                        <constraint firstAttribute="trailing" secondItem="h8c-Nt-1ne" secondAttribute="trailing" constant="30" id="CSZ-zR-nNF"/>
+                                        <constraint firstItem="HPe-Zw-yna" firstAttribute="top" secondItem="4zN-5o-9Ky" secondAttribute="top" constant="6" id="Uhc-2t-hJY"/>
+                                        <constraint firstAttribute="trailing" secondItem="HPe-Zw-yna" secondAttribute="trailing" constant="71" id="ozH-e3-U7C"/>
+                                        <constraint firstItem="h8c-Nt-1ne" firstAttribute="top" secondItem="4zN-5o-9Ky" secondAttribute="top" constant="6" id="qja-K7-rjg"/>
+                                        <constraint firstAttribute="trailing" secondItem="AuQ-Ge-Khv" secondAttribute="trailing" constant="110" id="yCr-s8-Ibg"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="SupermarketNameLabel" destination="4Eg-rV-cbX" id="M3X-NR-fxI"/>
@@ -574,4 +594,9 @@ of iets</string>
             <point key="canvasLocation" x="3375" y="-13"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="home" width="25" height="25"/>
+        <image name="shoppingcart" width="25" height="25"/>
+        <image name="tasks" width="25" height="25"/>
+    </resources>
 </document>
