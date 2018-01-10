@@ -7,68 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		31A369D5F2808075D266AEF5516E81C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		4934E5087890AF1B798F971DEED1DB83 /* Pods-SimpleMealUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5D8F30166D1E8625032C9D2FCF929D /* Pods-SimpleMealUITests-dummy.m */; };
-		66AF89AFBCFB05FE421FB20BDC5D2117 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		675ABF83158CC145A3D6826A131DC766 /* Pods-SimpleMealUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F1CB3BC26ECF694C4D4348E6AE3BB9AE /* Pods-SimpleMealUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		91F26A27400CE9CF991F3587AB6B01BE /* Pods-SimpleMeal-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F074C1C1ECACFAC0DA737263CE168AEA /* Pods-SimpleMeal-dummy.m */; };
-		946BDE1BE09AF1620505ADE7212C869B /* Pods-SimpleMealTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 203B979B231B42453A02596B2EC9C479 /* Pods-SimpleMealTests-dummy.m */; };
-		E8E4D1DADC34091377DCE5BE3D73350A /* Pods-SimpleMealTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACD3E1D9EE22E106C54F41A510C450E /* Pods-SimpleMealTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EEE6AE0F1E085898D5CB9B52EACDA1CF /* Pods-SimpleMeal-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E4FCFEDB32AEB68889D6CEC9DC93E739 /* Pods-SimpleMeal-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		91F26A27400CE9CF991F3587AB6B01BE /* Pods-SimpleMeal-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DF3A4358E4FDCCD208A39317597635 /* Pods-SimpleMeal-dummy.m */; };
+		EEE6AE0F1E085898D5CB9B52EACDA1CF /* Pods-SimpleMeal-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B744DE2AD0FF2C10B6C3023371DA3734 /* Pods-SimpleMeal-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F830EE263E315CEC9C690CB5B18751F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		04173490E6DFCA3FAA3A0EAF6C66EFBE /* Pods-SimpleMealUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-SimpleMealUITests.modulemap"; sourceTree = "<group>"; };
-		087D5745B1757076F6DFBDDF352891A9 /* Pods_SimpleMealTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SimpleMealTests.framework; path = "Pods-SimpleMealTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1461B06702549CC38B55A207B27979DC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		203B979B231B42453A02596B2EC9C479 /* Pods-SimpleMealTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SimpleMealTests-dummy.m"; sourceTree = "<group>"; };
-		25C8DC0293CEE04FFBA65E6580EA8F5D /* Pods-SimpleMealTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SimpleMealTests.release.xcconfig"; sourceTree = "<group>"; };
-		2BD43AD09CB47D73C2EB11E0C27DB50C /* Pods-SimpleMealTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SimpleMealTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		31F5BC0FB307B71F80ADB6831095F79F /* Pods-SimpleMeal-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SimpleMeal-frameworks.sh"; sourceTree = "<group>"; };
-		34D191080602F08465E2B8D57D7C3976 /* Pods-SimpleMeal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SimpleMeal.debug.xcconfig"; sourceTree = "<group>"; };
-		35708868E0F773D24773AC67E97A5E2F /* Pods-SimpleMealUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SimpleMealUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		3754F386E6683650823463088F96EC67 /* Pods-SimpleMealTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SimpleMealTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		39367C8D3D0B5C74A57FBD4D20A6BD01 /* Pods-SimpleMealUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SimpleMealUITests-resources.sh"; sourceTree = "<group>"; };
-		3ACD3E1D9EE22E106C54F41A510C450E /* Pods-SimpleMealTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SimpleMealTests-umbrella.h"; sourceTree = "<group>"; };
-		3E4B4DD76F3B752720B86C78DEE18FB7 /* Pods-SimpleMealUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SimpleMealUITests-frameworks.sh"; sourceTree = "<group>"; };
-		466636D50220C00291EFEE15653C73FD /* Pods-SimpleMealUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SimpleMealUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		4B6D6D3705B9B3EFB1A2D156B1D28090 /* Pods_SimpleMeal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SimpleMeal.framework; path = "Pods-SimpleMeal.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		54B3888341FCA65A1FAF300CBD16CEA6 /* Pods-SimpleMealTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SimpleMealTests-resources.sh"; sourceTree = "<group>"; };
-		60429C4B7E3DA34AE7C9478DD28A178D /* Pods-SimpleMealTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-SimpleMealTests.modulemap"; sourceTree = "<group>"; };
-		607632321347DD389EE407CB49D30572 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterKit.framework; path = iOS/TwitterKit.framework; sourceTree = "<group>"; };
+		2518E6FCBE8441A2539AC8C40A90B441 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C0D50DB949F7F1E523033AB9F0E92EF /* Pods-SimpleMeal-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SimpleMeal-resources.sh"; sourceTree = "<group>"; };
+		3BFAD657ADA5E9C83EB20E704E42F72F /* Pods-SimpleMeal-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SimpleMeal-acknowledgements.markdown"; sourceTree = "<group>"; };
+		467BFF33203D1113E045274A8D4F908A /* Pods-SimpleMeal-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SimpleMeal-acknowledgements.plist"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		6CCACDCB72580064BB627AA6F6CCF46C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8621F113D343918B10EBA21E07D3BBFD /* TwitterKitResources.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = iOS/TwitterKit.framework/TwitterKitResources.bundle; sourceTree = "<group>"; };
+		722B7E284048935176E7A158C22684FA /* Pods-SimpleMeal-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SimpleMeal-frameworks.sh"; sourceTree = "<group>"; };
+		89021C745BCC4E1B47552FB71595EEDA /* Pods-SimpleMeal.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-SimpleMeal.modulemap"; sourceTree = "<group>"; };
+		92DF3A4358E4FDCCD208A39317597635 /* Pods-SimpleMeal-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SimpleMeal-dummy.m"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		94663D202D291C0C287C74F9C8896F7D /* Pods-SimpleMeal.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-SimpleMeal.modulemap"; sourceTree = "<group>"; };
-		9C5D8F30166D1E8625032C9D2FCF929D /* Pods-SimpleMealUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SimpleMealUITests-dummy.m"; sourceTree = "<group>"; };
-		9D8DCB65F56A4AFE486751EEC1118BA6 /* Pods-SimpleMealUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SimpleMealUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		A7A315864F14A302BF6CD0B45E2C3642 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterCore.framework; path = iOS/TwitterCore.framework; sourceTree = "<group>"; };
-		B5A78EC5A9A493DA845E86742DF93FBB /* Pods-SimpleMealUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SimpleMealUITests.release.xcconfig"; sourceTree = "<group>"; };
-		BCAC63D8B700CBBB00E0411E5C5B48CD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CA070EE0A9B2D17C6E0D67702C2CE4D6 /* Pods-SimpleMeal-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SimpleMeal-acknowledgements.plist"; sourceTree = "<group>"; };
-		D17126D08B2DED11B3DDDD1A5FA3283C /* Pods_SimpleMealUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SimpleMealUITests.framework; path = "Pods-SimpleMealUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D28CA6F677B30FB286B75959BFF12EF9 /* Pods-SimpleMeal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SimpleMeal.release.xcconfig"; sourceTree = "<group>"; };
-		DA5B8D57FBB5DF4CA6C2824F214EF39A /* TwitterShareExtensionUIResources.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = TwitterShareExtensionUIResources.bundle; path = iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle; sourceTree = "<group>"; };
-		E05D38433A4E9DA018E9D5A9FD212FA5 /* Pods-SimpleMeal-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SimpleMeal-acknowledgements.markdown"; sourceTree = "<group>"; };
-		E4FCFEDB32AEB68889D6CEC9DC93E739 /* Pods-SimpleMeal-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SimpleMeal-umbrella.h"; sourceTree = "<group>"; };
-		EB4BA5C3D2A60F8EC8B96898BDDFB69B /* Pods-SimpleMealTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SimpleMealTests-frameworks.sh"; sourceTree = "<group>"; };
-		ECF4366512DF93B06F42D7452023228F /* Pods-SimpleMealTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SimpleMealTests.debug.xcconfig"; sourceTree = "<group>"; };
-		EFBD690A19C4252FE56CF2013AC9C47F /* Pods-SimpleMeal-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SimpleMeal-resources.sh"; sourceTree = "<group>"; };
-		F074C1C1ECACFAC0DA737263CE168AEA /* Pods-SimpleMeal-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SimpleMeal-dummy.m"; sourceTree = "<group>"; };
-		F1CB3BC26ECF694C4D4348E6AE3BB9AE /* Pods-SimpleMealUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SimpleMealUITests-umbrella.h"; sourceTree = "<group>"; };
+		B2ABCD20AAFB04D8A995BF3287C2407D /* Pods-SimpleMeal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SimpleMeal.debug.xcconfig"; sourceTree = "<group>"; };
+		B744DE2AD0FF2C10B6C3023371DA3734 /* Pods-SimpleMeal-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SimpleMeal-umbrella.h"; sourceTree = "<group>"; };
+		CBFF708614FFA5012D977C483F3A63E2 /* Pods-SimpleMeal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SimpleMeal.release.xcconfig"; sourceTree = "<group>"; };
+		FBE010E5F219801DD8C10EC96931E2B6 /* Pods_SimpleMeal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SimpleMeal.framework; path = "Pods-SimpleMeal.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6A7E0CF0440DF6E63F936D82C9850A3B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				31A369D5F2808075D266AEF5516E81C4 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D09113BE371D33C3FE8EF46D98465AE4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -77,79 +37,41 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EB75AAA957E0B6C83C27E6EEE920DA75 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				66AF89AFBCFB05FE421FB20BDC5D2117 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0BF536F08A25BA83B4D06A7285B6CA6B /* TwitterCore */ = {
+		02074505181DBD3466C110BAF45FC648 /* Pods-SimpleMeal */ = {
 			isa = PBXGroup;
 			children = (
-				411517A95D07289E303AEB5356B6B063 /* Frameworks */,
-			);
-			name = TwitterCore;
-			path = TwitterCore;
-			sourceTree = "<group>";
-		};
-		35C2ACA403E5BF699803ED6C119E7815 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4B6D6D3705B9B3EFB1A2D156B1D28090 /* Pods_SimpleMeal.framework */,
-				087D5745B1757076F6DFBDDF352891A9 /* Pods_SimpleMealTests.framework */,
-				D17126D08B2DED11B3DDDD1A5FA3283C /* Pods_SimpleMealUITests.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		411517A95D07289E303AEB5356B6B063 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A7A315864F14A302BF6CD0B45E2C3642 /* TwitterCore.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		59F83748FB7A53BEF46129D18B0CF53C /* TwitterKit */ = {
-			isa = PBXGroup;
-			children = (
-				F91DB74D7D17026793F75D04FAF895D0 /* Frameworks */,
-				85E9FF6F5D05D8E98E9B3B73A4087643 /* Resources */,
-			);
-			name = TwitterKit;
-			path = TwitterKit;
-			sourceTree = "<group>";
-		};
-		65A8A98BFE06A1D6CE490B933362D762 /* Pods-SimpleMeal */ = {
-			isa = PBXGroup;
-			children = (
-				6CCACDCB72580064BB627AA6F6CCF46C /* Info.plist */,
-				94663D202D291C0C287C74F9C8896F7D /* Pods-SimpleMeal.modulemap */,
-				E05D38433A4E9DA018E9D5A9FD212FA5 /* Pods-SimpleMeal-acknowledgements.markdown */,
-				CA070EE0A9B2D17C6E0D67702C2CE4D6 /* Pods-SimpleMeal-acknowledgements.plist */,
-				F074C1C1ECACFAC0DA737263CE168AEA /* Pods-SimpleMeal-dummy.m */,
-				31F5BC0FB307B71F80ADB6831095F79F /* Pods-SimpleMeal-frameworks.sh */,
-				EFBD690A19C4252FE56CF2013AC9C47F /* Pods-SimpleMeal-resources.sh */,
-				E4FCFEDB32AEB68889D6CEC9DC93E739 /* Pods-SimpleMeal-umbrella.h */,
-				34D191080602F08465E2B8D57D7C3976 /* Pods-SimpleMeal.debug.xcconfig */,
-				D28CA6F677B30FB286B75959BFF12EF9 /* Pods-SimpleMeal.release.xcconfig */,
+				2518E6FCBE8441A2539AC8C40A90B441 /* Info.plist */,
+				89021C745BCC4E1B47552FB71595EEDA /* Pods-SimpleMeal.modulemap */,
+				3BFAD657ADA5E9C83EB20E704E42F72F /* Pods-SimpleMeal-acknowledgements.markdown */,
+				467BFF33203D1113E045274A8D4F908A /* Pods-SimpleMeal-acknowledgements.plist */,
+				92DF3A4358E4FDCCD208A39317597635 /* Pods-SimpleMeal-dummy.m */,
+				722B7E284048935176E7A158C22684FA /* Pods-SimpleMeal-frameworks.sh */,
+				2C0D50DB949F7F1E523033AB9F0E92EF /* Pods-SimpleMeal-resources.sh */,
+				B744DE2AD0FF2C10B6C3023371DA3734 /* Pods-SimpleMeal-umbrella.h */,
+				B2ABCD20AAFB04D8A995BF3287C2407D /* Pods-SimpleMeal.debug.xcconfig */,
+				CBFF708614FFA5012D977C483F3A63E2 /* Pods-SimpleMeal.release.xcconfig */,
 			);
 			name = "Pods-SimpleMeal";
 			path = "Target Support Files/Pods-SimpleMeal";
 			sourceTree = "<group>";
 		};
-		6AD20DAD5E30DA011D51037C50AF6B9D /* Pods */ = {
+		115032BA36B9DD0D98B8832050078D7B /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				0BF536F08A25BA83B4D06A7285B6CA6B /* TwitterCore */,
-				59F83748FB7A53BEF46129D18B0CF53C /* TwitterKit */,
+				02074505181DBD3466C110BAF45FC648 /* Pods-SimpleMeal */,
 			);
-			name = Pods;
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		6759656D61BBF5FF6BDF76261F869B73 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FBE010E5F219801DD8C10EC96931E2B6 /* Pods_SimpleMeal.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -157,47 +79,9 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				6AD20DAD5E30DA011D51037C50AF6B9D /* Pods */,
-				35C2ACA403E5BF699803ED6C119E7815 /* Products */,
-				8C9A045E62D74FDF7D450F90BBA855DA /* Targets Support Files */,
+				6759656D61BBF5FF6BDF76261F869B73 /* Products */,
+				115032BA36B9DD0D98B8832050078D7B /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		823C6A76AE6C4334B4E2A32835AC7EC7 /* Pods-SimpleMealTests */ = {
-			isa = PBXGroup;
-			children = (
-				BCAC63D8B700CBBB00E0411E5C5B48CD /* Info.plist */,
-				60429C4B7E3DA34AE7C9478DD28A178D /* Pods-SimpleMealTests.modulemap */,
-				3754F386E6683650823463088F96EC67 /* Pods-SimpleMealTests-acknowledgements.markdown */,
-				2BD43AD09CB47D73C2EB11E0C27DB50C /* Pods-SimpleMealTests-acknowledgements.plist */,
-				203B979B231B42453A02596B2EC9C479 /* Pods-SimpleMealTests-dummy.m */,
-				EB4BA5C3D2A60F8EC8B96898BDDFB69B /* Pods-SimpleMealTests-frameworks.sh */,
-				54B3888341FCA65A1FAF300CBD16CEA6 /* Pods-SimpleMealTests-resources.sh */,
-				3ACD3E1D9EE22E106C54F41A510C450E /* Pods-SimpleMealTests-umbrella.h */,
-				ECF4366512DF93B06F42D7452023228F /* Pods-SimpleMealTests.debug.xcconfig */,
-				25C8DC0293CEE04FFBA65E6580EA8F5D /* Pods-SimpleMealTests.release.xcconfig */,
-			);
-			name = "Pods-SimpleMealTests";
-			path = "Target Support Files/Pods-SimpleMealTests";
-			sourceTree = "<group>";
-		};
-		85E9FF6F5D05D8E98E9B3B73A4087643 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				8621F113D343918B10EBA21E07D3BBFD /* TwitterKitResources.bundle */,
-				DA5B8D57FBB5DF4CA6C2824F214EF39A /* TwitterShareExtensionUIResources.bundle */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		8C9A045E62D74FDF7D450F90BBA855DA /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				65A8A98BFE06A1D6CE490B933362D762 /* Pods-SimpleMeal */,
-				823C6A76AE6C4334B4E2A32835AC7EC7 /* Pods-SimpleMealTests */,
-				D4E774A61E3AC95932B1E9B088443DEC /* Pods-SimpleMealUITests */,
-			);
-			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -216,56 +100,14 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		D4E774A61E3AC95932B1E9B088443DEC /* Pods-SimpleMealUITests */ = {
-			isa = PBXGroup;
-			children = (
-				1461B06702549CC38B55A207B27979DC /* Info.plist */,
-				04173490E6DFCA3FAA3A0EAF6C66EFBE /* Pods-SimpleMealUITests.modulemap */,
-				9D8DCB65F56A4AFE486751EEC1118BA6 /* Pods-SimpleMealUITests-acknowledgements.markdown */,
-				466636D50220C00291EFEE15653C73FD /* Pods-SimpleMealUITests-acknowledgements.plist */,
-				9C5D8F30166D1E8625032C9D2FCF929D /* Pods-SimpleMealUITests-dummy.m */,
-				3E4B4DD76F3B752720B86C78DEE18FB7 /* Pods-SimpleMealUITests-frameworks.sh */,
-				39367C8D3D0B5C74A57FBD4D20A6BD01 /* Pods-SimpleMealUITests-resources.sh */,
-				F1CB3BC26ECF694C4D4348E6AE3BB9AE /* Pods-SimpleMealUITests-umbrella.h */,
-				35708868E0F773D24773AC67E97A5E2F /* Pods-SimpleMealUITests.debug.xcconfig */,
-				B5A78EC5A9A493DA845E86742DF93FBB /* Pods-SimpleMealUITests.release.xcconfig */,
-			);
-			name = "Pods-SimpleMealUITests";
-			path = "Target Support Files/Pods-SimpleMealUITests";
-			sourceTree = "<group>";
-		};
-		F91DB74D7D17026793F75D04FAF895D0 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				607632321347DD389EE407CB49D30572 /* TwitterKit.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		13A6A7A0C44AC8DE65D3FA2886944F36 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E8E4D1DADC34091377DCE5BE3D73350A /* Pods-SimpleMealTests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		826C24B9975E4723F5F389370B1FF3F1 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				EEE6AE0F1E085898D5CB9B52EACDA1CF /* Pods-SimpleMeal-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B87A3A016A974EB9EDB7F81CABC5AD5A /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				675ABF83158CC145A3D6826A131DC766 /* Pods-SimpleMealUITests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,41 +128,7 @@
 			);
 			name = "Pods-SimpleMeal";
 			productName = "Pods-SimpleMeal";
-			productReference = 4B6D6D3705B9B3EFB1A2D156B1D28090 /* Pods_SimpleMeal.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		2523AE2E1F0FD3126F5E11D0515CF119 /* Pods-SimpleMealTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D35B948C0D92665DE4B0DBC8D10CCD1F /* Build configuration list for PBXNativeTarget "Pods-SimpleMealTests" */;
-			buildPhases = (
-				B83000AEB3D5AAD2AE41311E57A61AF5 /* Sources */,
-				6A7E0CF0440DF6E63F936D82C9850A3B /* Frameworks */,
-				13A6A7A0C44AC8DE65D3FA2886944F36 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-SimpleMealTests";
-			productName = "Pods-SimpleMealTests";
-			productReference = 087D5745B1757076F6DFBDDF352891A9 /* Pods_SimpleMealTests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		4060F95C9ABC5E983131D1B1474CB83F /* Pods-SimpleMealUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BA5F41C4FAE2ABD169A6027F3907FD5F /* Build configuration list for PBXNativeTarget "Pods-SimpleMealUITests" */;
-			buildPhases = (
-				890FE4AD86356C020272C7D785B60780 /* Sources */,
-				EB75AAA957E0B6C83C27E6EEE920DA75 /* Frameworks */,
-				B87A3A016A974EB9EDB7F81CABC5AD5A /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-SimpleMealUITests";
-			productName = "Pods-SimpleMealUITests";
-			productReference = D17126D08B2DED11B3DDDD1A5FA3283C /* Pods_SimpleMealUITests.framework */;
+			productReference = FBE010E5F219801DD8C10EC96931E2B6 /* Pods_SimpleMeal.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -340,34 +148,16 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 35C2ACA403E5BF699803ED6C119E7815 /* Products */;
+			productRefGroup = 6759656D61BBF5FF6BDF76261F869B73 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				229CD8D7956C44264BF0EF5F7C3E4D7E /* Pods-SimpleMeal */,
-				2523AE2E1F0FD3126F5E11D0515CF119 /* Pods-SimpleMealTests */,
-				4060F95C9ABC5E983131D1B1474CB83F /* Pods-SimpleMealUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		890FE4AD86356C020272C7D785B60780 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4934E5087890AF1B798F971DEED1DB83 /* Pods-SimpleMealUITests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B83000AEB3D5AAD2AE41311E57A61AF5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				946BDE1BE09AF1620505ADE7212C869B /* Pods-SimpleMealTests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DA7A0FE0393BE5DF6C3256A190111FD6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -379,75 +169,9 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		1F5F9B1AB205731C57B7BD235277520A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25C8DC0293CEE04FFBA65E6580EA8F5D /* Pods-SimpleMealTests.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SimpleMealTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SimpleMealTests/Pods-SimpleMealTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_SimpleMealTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		22F3BD4A1FE9EAB77F5B0D8CC8B7D0CF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B5A78EC5A9A493DA845E86742DF93FBB /* Pods-SimpleMealUITests.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SimpleMealUITests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SimpleMealUITests/Pods-SimpleMealUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_SimpleMealUITests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		45227A3CC0EE211BF71CDC27A07E8911 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D28CA6F677B30FB286B75959BFF12EF9 /* Pods-SimpleMeal.release.xcconfig */;
+			baseConfigurationReference = CBFF708614FFA5012D977C483F3A63E2 /* Pods-SimpleMeal.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -477,38 +201,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		49603B9245CE64B9FF27E158B1FFD25C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = ECF4366512DF93B06F42D7452023228F /* Pods-SimpleMealTests.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SimpleMealTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SimpleMealTests/Pods-SimpleMealTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_SimpleMealTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		7C07ED8089F70A31B83996A8910D7F18 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -625,41 +317,9 @@
 			};
 			name = Release;
 		};
-		EDCF56CD625B8DF0521C4701EA373CC9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 35708868E0F773D24773AC67E97A5E2F /* Pods-SimpleMealUITests.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SimpleMealUITests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SimpleMealUITests/Pods-SimpleMealUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_SimpleMealUITests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		F6113978CAF7F4052514DFFCA7342F61 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 34D191080602F08465E2B8D57D7C3976 /* Pods-SimpleMeal.debug.xcconfig */;
+			baseConfigurationReference = B2ABCD20AAFB04D8A995BF3287C2407D /* Pods-SimpleMeal.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -706,24 +366,6 @@
 			buildConfigurations = (
 				F6113978CAF7F4052514DFFCA7342F61 /* Debug */,
 				45227A3CC0EE211BF71CDC27A07E8911 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BA5F41C4FAE2ABD169A6027F3907FD5F /* Build configuration list for PBXNativeTarget "Pods-SimpleMealUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EDCF56CD625B8DF0521C4701EA373CC9 /* Debug */,
-				22F3BD4A1FE9EAB77F5B0D8CC8B7D0CF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D35B948C0D92665DE4B0DBC8D10CCD1F /* Build configuration list for PBXNativeTarget "Pods-SimpleMealTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				49603B9245CE64B9FF27E158B1FFD25C /* Debug */,
-				1F5F9B1AB205731C57B7BD235277520A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

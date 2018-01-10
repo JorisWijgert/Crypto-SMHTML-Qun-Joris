@@ -7,13 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		58696C1DA101DB3DD1816DB0 /* Pods_SimpleMealUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BC379BCD4B435D4B5E21101 /* Pods_SimpleMealUITests.framework */; };
-		588AC7516BB43D4CD231D1F6 /* Pods_SimpleMealTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0978A8B8BAB8EB23F4D686D /* Pods_SimpleMealTests.framework */; };
-		D23CF6406F31A661C6322C98 /* Pods_SimpleMeal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EAB4C6EF2657519254E05F1 /* Pods_SimpleMeal.framework */; };
 		F51610C41FFE6088002A42BA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51610C31FFE6088002A42BA /* SearchViewController.swift */; };
 		F51610C61FFE65D2002A42BA /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51610C51FFE65D2002A42BA /* CustomError.swift */; };
 		F51610C81FFE69CC002A42BA /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51610C71FFE69CC002A42BA /* RecipeViewController.swift */; };
 		F53F2EBB1FFF7F59001DE4F3 /* RecipeDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53F2EBA1FFF7F59001DE4F3 /* RecipeDetailController.swift */; };
+		F5542B6E2006348F0060EEF2 /* Pods_SimpleMeal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EAB4C6EF2657519254E05F1 /* Pods_SimpleMeal.framework */; };
 		F55483B82004BDE6001649A5 /* VideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55483B72004BDE6001649A5 /* VideoPlayer.swift */; };
 		F55483BA2004E9F8001649A5 /* SupermarketListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55483B92004E9F8001649A5 /* SupermarketListController.swift */; };
 		F55483BC2004ED96001649A5 /* Supermarket.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55483BB2004ED96001649A5 /* Supermarket.swift */; };
@@ -50,10 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		03A48309A10D900F4826A039 /* Pods-SimpleMealTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMealTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleMealTests/Pods-SimpleMealTests.release.xcconfig"; sourceTree = "<group>"; };
 		0BC379BCD4B435D4B5E21101 /* Pods_SimpleMealUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleMealUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3AA61C95467F8F97AF432512 /* Pods-SimpleMealUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMealUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleMealUITests/Pods-SimpleMealUITests.release.xcconfig"; sourceTree = "<group>"; };
-		4068F80C82AB5EF6282C530C /* Pods-SimpleMealUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMealUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleMealUITests/Pods-SimpleMealUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		55B98DD5A4B02C55BFEDB6DF /* Pods-SimpleMeal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMeal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleMeal/Pods-SimpleMeal.debug.xcconfig"; sourceTree = "<group>"; };
 		5EAB4C6EF2657519254E05F1 /* Pods_SimpleMeal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleMeal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0978A8B8BAB8EB23F4D686D /* Pods_SimpleMealTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleMealTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,7 +79,6 @@
 		F5CA77251FEA965400EC4A6B /* SimpleMealUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleMealUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5CA77291FEA965400EC4A6B /* SimpleMealUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleMealUITests.swift; sourceTree = "<group>"; };
 		F5CA772B1FEA965400EC4A6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F851F2B8E095CA9B7095A3A4 /* Pods-SimpleMealTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMealTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleMealTests/Pods-SimpleMealTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D23CF6406F31A661C6322C98 /* Pods_SimpleMeal.framework in Frameworks */,
+				F5542B6E2006348F0060EEF2 /* Pods_SimpleMeal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,7 +94,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				588AC7516BB43D4CD231D1F6 /* Pods_SimpleMealTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,7 +101,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58696C1DA101DB3DD1816DB0 /* Pods_SimpleMealUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,10 +122,6 @@
 			children = (
 				55B98DD5A4B02C55BFEDB6DF /* Pods-SimpleMeal.debug.xcconfig */,
 				F292D2F513A15EB6F86AE271 /* Pods-SimpleMeal.release.xcconfig */,
-				F851F2B8E095CA9B7095A3A4 /* Pods-SimpleMealTests.debug.xcconfig */,
-				03A48309A10D900F4826A039 /* Pods-SimpleMealTests.release.xcconfig */,
-				4068F80C82AB5EF6282C530C /* Pods-SimpleMealUITests.debug.xcconfig */,
-				3AA61C95467F8F97AF432512 /* Pods-SimpleMealUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -255,12 +243,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F5CA77311FEA965400EC4A6B /* Build configuration list for PBXNativeTarget "SimpleMealTests" */;
 			buildPhases = (
-				37E0402F69B255259FC47BC4 /* [CP] Check Pods Manifest.lock */,
 				F5CA77161FEA965400EC4A6B /* Sources */,
 				F5CA77171FEA965400EC4A6B /* Frameworks */,
 				F5CA77181FEA965400EC4A6B /* Resources */,
-				4D005CC6003397DB88D1C1D7 /* [CP] Embed Pods Frameworks */,
-				20B562171E3AE3197F93AEE4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -276,12 +261,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F5CA77341FEA965400EC4A6B /* Build configuration list for PBXNativeTarget "SimpleMealUITests" */;
 			buildPhases = (
-				160B1F08A54D4F8FF3A0CC12 /* [CP] Check Pods Manifest.lock */,
 				F5CA77211FEA965400EC4A6B /* Sources */,
 				F5CA77221FEA965400EC4A6B /* Frameworks */,
 				F5CA77231FEA965400EC4A6B /* Resources */,
-				82A593A267E602AD22DB9DE6 /* [CP] Embed Pods Frameworks */,
-				D5FCE42826EE220B6BA7C998 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -368,72 +350,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		160B1F08A54D4F8FF3A0CC12 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SimpleMealUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		20B562171E3AE3197F93AEE4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleMealTests/Pods-SimpleMealTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		37E0402F69B255259FC47BC4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SimpleMealTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4D005CC6003397DB88D1C1D7 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleMealTests/Pods-SimpleMealTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		7ECA55F55B733FFE3B52C6F9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -451,21 +367,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleMeal/Pods-SimpleMeal-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		82A593A267E602AD22DB9DE6 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleMealUITests/Pods-SimpleMealUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B899401E4A3400DA2903B4A0 /* [CP] Embed Pods Frameworks */ = {
@@ -486,21 +387,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleMeal/Pods-SimpleMeal-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D5FCE42826EE220B6BA7C998 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleMealUITests/Pods-SimpleMealUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EEB0B9DB915B3E6E0DCCB989 /* [CP] Check Pods Manifest.lock */ = {
@@ -628,6 +514,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -685,6 +572,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -710,6 +598,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H5DDT55EN4;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = SimpleMeal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -727,6 +616,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H5DDT55EN4;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = SimpleMeal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -739,7 +629,6 @@
 		};
 		F5CA77321FEA965400EC4A6B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F851F2B8E095CA9B7095A3A4 /* Pods-SimpleMealTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -757,7 +646,6 @@
 		};
 		F5CA77331FEA965400EC4A6B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 03A48309A10D900F4826A039 /* Pods-SimpleMealTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -775,7 +663,6 @@
 		};
 		F5CA77351FEA965400EC4A6B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4068F80C82AB5EF6282C530C /* Pods-SimpleMealUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -792,7 +679,6 @@
 		};
 		F5CA77361FEA965400EC4A6B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3AA61C95467F8F97AF432512 /* Pods-SimpleMealUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
