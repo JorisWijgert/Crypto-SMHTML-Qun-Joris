@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Pods_SimpleMeal
+@testable import SimpleMeal
 
 class SimpleMealTests: XCTestCase {
 
