@@ -40,6 +40,25 @@ class RecipeDetailController: UIViewController {
             RecipeImage.contentMode = .scaleAspectFit
             downloadImage(url: url)
         }
+        
+        let jsonUrlString = String(format:"https://i329146.venus.fhict.nl/api/recipes/lowestprice/%d",recipe!.Id)
+        guard let url = URL(string: jsonUrlString) else { return }
+        
+        URLSession.shared.dataTask(with: url) { (data, response, err) in
+            guard let data = data else { return }
+            do {
+                DispatchQueue.main.async {
+                    guard let returnData = String(data: data, encoding: .utf8) else {return}
+                    do {
+                        self.BudgetLabel.text = "€ " + returnData
+                        
+                    }
+                }
+            } catch let jsonErr {
+                print("Error serializing json:", jsonErr)
+            }
+            }.resume()
+        
         PrepTimeLabel.text = String(format: "%d min.", recipe!.TimeMin)
         // TODO: call budget
         RecipeDescLabel.text = recipe!.Description
