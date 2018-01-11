@@ -46,6 +46,7 @@ Kies je recept!</string>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNe-g5-jZg">
                                         <rect key="frame" x="140" y="301" width="95" height="30"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="buttonMakeMeal"/>
                                         <state key="normal" title="Maak maaltijd"/>
                                         <connections>
                                             <action selector="makeMealButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C9e-jj-60q"/>

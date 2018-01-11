@@ -9,13 +9,13 @@
 import Foundation
 
 class Recipe : Decodable{
-    let Id: Int
-    let Name: String
-    let Description : String
-    let PersonAmount : Int
-    let TimeMin : Int
-    let ImageUrl : String
-    let RecipeProducts : [RecipeProduct]
+    var Id: Int
+    var Name: String
+    var Description : String
+    var PersonAmount : Int
+    var TimeMin : Int
+    var ImageUrl : String
+    var RecipeProducts : [RecipeProduct]
 
     init(Id : Int, Name:String, Description : String, PersonAmount : Int, TimeMin : Int, ImageUrl : String, RecipeProducts : [RecipeProduct]){
         self.Id = Id
@@ -26,13 +26,25 @@ class Recipe : Decodable{
         self.ImageUrl = ImageUrl 
         self.RecipeProducts = RecipeProducts
     }
-//    init(json: [String:Any]){
-//        id = json["Id"] as? Int ?? -1
-//        name = json["Name"] as? String ?? ""
-//        description = json["Description"] as? String ?? ""
-//        personAmount = json["PersonAmount"] as? Int ?? -1
-//        timeMin = json["TimeMin"] as? Int ?? -1
-//        imageUrl = json["imageUrl"] as? String ?? ""
-//        recipeProduct = json["recipeProduct"] as? RecipeProduct ?? NSObject!
-//    }
+    
+    func addProductToRecipe(recipeProduct:RecipeProduct){
+        self.RecipeProducts.append(recipeProduct)
+    }
+    
+    func editTime(OffsetTime : Int)->Int{
+        if((self.TimeMin+OffsetTime)>0){
+            self.TimeMin += OffsetTime
+        }
+        return self.TimeMin
+    }
+    
+    func editPerson(OffsetPersons : Int)->Int{
+        if(OffsetPersons+self.PersonAmount>0){
+            self.PersonAmount += OffsetPersons
+        }
+        return self.PersonAmount
+    }
+    
+    
 }
+
