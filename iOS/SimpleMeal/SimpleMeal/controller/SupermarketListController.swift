@@ -10,12 +10,52 @@ import UIKit
 
 class SupermarketTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var DeliverButton: UIButton!
+    @IBOutlet weak var PickupButton: UIButton!
+    @IBOutlet weak var ShoplistButton: UIButton!
+    
     @IBOutlet weak var SupermarketNameLabel: UILabel!
+    
+    var deliverTapped : (() -> Void)? = nil
+    var pickupTapped : (() -> Void)? = nil
+    var shoplistTapped : (() -> Void)? = nil
     
     func updateUI(supermarket: Supermarket)
     {
         SupermarketNameLabel.text = supermarket.Name
+        if(supermarket.CanDeliver)
+        {
+            DeliverButton.isHidden = false
+        } else{
+            DeliverButton.isHidden = true
+        }
+        
+        if(supermarket.CanPickUp){
+            PickupButton.isHidden = false
+        } else{
+            PickupButton.isHidden = true
+        }
     }
+    
+    @IBAction func deliverClicked(_ sender: Any) {
+        if let deliverTapped = self.deliverTapped {
+            deliverTapped()
+        }
+    }
+    
+    @IBAction func pickupClicked(_ sender: Any) {
+        if let pickupTapped = self.pickupTapped {
+            pickupTapped()
+        }
+    }
+    
+    @IBAction func shoplistClicked(_ sender: Any) {
+        if let shoplistTapped = self.shoplistTapped {
+            shoplistTapped()
+        }
+    }
+    
+    
 }
 
 class SupermarketListController: UITableViewController{
@@ -62,12 +102,32 @@ class SupermarketListController: UITableViewController{
         if let cell = tableView.dequeueReusableCell(withIdentifier: "SupermarketTableViewCell", for: indexPath) as? SupermarketTableViewCell{
             var supermarket = supermarkets[indexPath.row] as! Supermarket
             cell.updateUI(supermarket: supermarket)
+            cell.deliverTapped = {
+                let orderViewController = self.storyboard?.instantiateViewController(withIdentifier: "OrderViewController") as! OrderViewController
+                orderViewController.recipe = self.recipe
+                orderViewController.supermarket = supermarket
+                self.navigationController?.pushViewController(orderViewController, animated: true)
+            }
+            cell.pickupTapped={
+                let orderViewController = self.storyboard?.instantiateViewController(withIdentifier: "OrderViewController") as! OrderViewController
+                orderViewController.recipe = self.recipe
+                orderViewController.supermarket = supermarket
+                self.navigationController?.pushViewController(orderViewController, animated: true)
+            }
+            cell.shoplistTapped={
+                let shoplistViewController = self.storyboard?.instantiateViewController(withIdentifier: "ShoplistViewController") as! ShoplistViewController
+                shoplistViewController.recipe = self.recipe
+                shoplistViewController.supermarket = supermarket
+                self.navigationController?.pushViewController(shoplistViewController, animated: true)
+            }
             return cell
         } else {
             return UITableViewCell()
         }
+        
+        
+        
     }
-    
 
     /*
     // MARK: - Navigation
