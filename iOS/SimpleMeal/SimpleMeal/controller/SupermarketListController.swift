@@ -116,6 +116,8 @@ class SupermarketListController: UITableViewController{
             }
             cell.shoplistTapped={
                 let shoplistViewController = self.storyboard?.instantiateViewController(withIdentifier: "ShoplistViewController") as! ShoplistViewController
+                shoplistViewController.recipe = self.recipe
+                shoplistViewController.supermarket = supermarket
                 self.navigationController?.pushViewController(shoplistViewController, animated: true)
             }
             return cell
