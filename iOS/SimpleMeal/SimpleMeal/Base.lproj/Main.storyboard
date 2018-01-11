@@ -339,6 +339,14 @@ of iets</string>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jK-Sv-lbl">
+                                        <rect key="frame" x="258" y="156" width="109" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Share on twitter"/>
+                                        <connections>
+                                            <action selector="ShareButtonClicked:" destination="vTo-Vv-5la" eventType="touchUpInside" id="G91-hh-3a8"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -397,22 +405,22 @@ of iets</string>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AuQ-Ge-Khv">
-                                            <rect key="frame" x="269" y="6" width="25" height="25"/>
-                                            <state key="normal" image="home"/>
+                                            <rect key="frame" x="194" y="6" width="100" height="100"/>
+                                            <state key="normal" image="100x100Home"/>
                                             <connections>
                                                 <action selector="deliverClicked:" destination="hjA-sH-fQP" eventType="touchUpInside" id="wXU-Zb-NCG"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8c-Nt-1ne">
-                                            <rect key="frame" x="344" y="6" width="25" height="25"/>
-                                            <state key="normal" image="tasks"/>
+                                            <rect key="frame" x="269" y="6" width="100" height="100"/>
+                                            <state key="normal" image="100x100tasks"/>
                                             <connections>
                                                 <action selector="shoplistClicked:" destination="hjA-sH-fQP" eventType="touchUpInside" id="wGn-7D-CV0"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPe-Zw-yna">
-                                            <rect key="frame" x="304" y="6" width="25" height="25"/>
-                                            <state key="normal" image="shoppingcart"/>
+                                            <rect key="frame" x="229" y="6" width="100" height="100"/>
+                                            <state key="normal" image="100x100Shoppingcart"/>
                                             <connections>
                                                 <action selector="pickupClicked:" destination="hjA-sH-fQP" eventType="touchUpInside" id="8Hg-HD-rRO"/>
                                             </connections>
@@ -662,8 +670,8 @@ of iets</string>
         </scene>
     </scenes>
     <resources>
-        <image name="home" width="25" height="25"/>
-        <image name="shoppingcart" width="25" height="25"/>
-        <image name="tasks" width="25" height="25"/>
+        <image name="100x100Home" width="100" height="100"/>
+        <image name="100x100Shoppingcart" width="100" height="100"/>
+        <image name="100x100tasks" width="100" height="100"/>
     </resources>
 </document>
