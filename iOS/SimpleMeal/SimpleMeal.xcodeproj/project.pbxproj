@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F508ED98200765D300A9B455 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F508ED97200765D300A9B455 /* OrderViewController.swift */; };
+		F508ED9A200768F500A9B455 /* ShoplistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F508ED99200768F500A9B455 /* ShoplistViewController.swift */; };
 		F51610C41FFE6088002A42BA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51610C31FFE6088002A42BA /* SearchViewController.swift */; };
 		F51610C61FFE65D2002A42BA /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51610C51FFE65D2002A42BA /* CustomError.swift */; };
 		F51610C81FFE69CC002A42BA /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51610C71FFE69CC002A42BA /* RecipeViewController.swift */; };
@@ -53,6 +55,8 @@
 		5EAB4C6EF2657519254E05F1 /* Pods_SimpleMeal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleMeal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0978A8B8BAB8EB23F4D686D /* Pods_SimpleMealTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleMealTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F292D2F513A15EB6F86AE271 /* Pods-SimpleMeal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMeal.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleMeal/Pods-SimpleMeal.release.xcconfig"; sourceTree = "<group>"; };
+		F508ED97200765D300A9B455 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		F508ED99200768F500A9B455 /* ShoplistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoplistViewController.swift; sourceTree = "<group>"; };
 		F51610C31FFE6088002A42BA /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F51610C51FFE65D2002A42BA /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		F51610C71FFE69CC002A42BA /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +158,8 @@
 				F53F2EBA1FFF7F59001DE4F3 /* RecipeDetailController.swift */,
 				F55483B72004BDE6001649A5 /* VideoPlayer.swift */,
 				F55483B92004E9F8001649A5 /* SupermarketListController.swift */,
+				F508ED97200765D300A9B455 /* OrderViewController.swift */,
+				F508ED99200768F500A9B455 /* ShoplistViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -425,6 +431,8 @@
 				F51610C61FFE65D2002A42BA /* CustomError.swift in Sources */,
 				F55483B82004BDE6001649A5 /* VideoPlayer.swift in Sources */,
 				F5CA770A1FEA965400EC4A6B /* AppDelegate.swift in Sources */,
+				F508ED98200765D300A9B455 /* OrderViewController.swift in Sources */,
+				F508ED9A200768F500A9B455 /* ShoplistViewController.swift in Sources */,
 				F5B27AE91FEBB6A0008F9778 /* Recipe.swift in Sources */,
 				F5B27AED1FEBB810008F9778 /* Product.swift in Sources */,
 				F55483BC2004ED96001649A5 /* Supermarket.swift in Sources */,
