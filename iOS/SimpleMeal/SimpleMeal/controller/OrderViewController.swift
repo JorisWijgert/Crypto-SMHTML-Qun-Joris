@@ -37,7 +37,7 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestWhenInUseAuthorization()
-        manager.startUpdatingLocation()
+                manager.startUpdatingLocation()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -55,6 +55,22 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
         startLocation = locations[0]
         let supermarketLocation = CLLocation(latitude: (supermarket?.Latitude)!, longitude: (supermarket?.Longitude)!)
         
+        var distance = getDistanceFromLatLonInKm(lat1: startLocation.coordinate.latitude, lon1: startLocation.coordinate.longitude, lat2: supermarketLocation.coordinate.latitude, lon2: supermarketLocation.coordinate.longitude)
+        SupermarketLabel.text = supermarket!.Name + String(format: ": %.2f km hier vandaan", distance)
+    }
+    
+    func getDistanceFromLatLonInKm(lat1: Double, lon1: Double, lat2: Double, lon2: Double)->Double{
+        var R = 6371.0
+        var dLat = deg2rad(deg: lat2-lat1)
+        var dLon = deg2rad(deg: lon2-lon1)
+        var a = sin(dLat/2) * sin(dLat/2) + cos(deg2rad(deg: lat1)) * cos(deg2rad(deg: lat2)) * sin(dLon/2) * sin(dLon/2)
+        var c = 2 * atan2(sqrt(a), sqrt(1-a))
+        var d = R * c
+        return d
+    }
+    
+    func deg2rad(deg: Double) -> Double {
+        return deg * (Double.pi/180)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

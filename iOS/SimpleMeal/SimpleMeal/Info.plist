@@ -35,7 +35,11 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Share your location</string>
+	<string>Location to determine the distance to the supermarkets.</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Location to determine the distance to the supermarkets.</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Location to determine the distance to the supermarkets.</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
