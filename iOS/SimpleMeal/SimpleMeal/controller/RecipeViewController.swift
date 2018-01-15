@@ -16,7 +16,7 @@ class RecipeTableViewCell: UITableViewCell {
         RecipeNameLabel.text = recipe.Name;
         
         if let url = URL(string: recipe.ImageUrl){
-            RecipeImageView.contentMode = .scaleAspectFit
+            RecipeImageView.contentMode = .scaleAspectFill
             downloadImage(url: url)
         }
     }
