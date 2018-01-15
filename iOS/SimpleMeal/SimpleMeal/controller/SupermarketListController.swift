@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import GoogleMobileAds
+
 
 class SupermarketTableViewCell: UITableViewCell {
     
@@ -62,11 +64,16 @@ class SupermarketListController: UITableViewController{
 
     var recipe:Recipe?
     var supermarkets=[Supermarket]()
-    
+    var interstitial: GADInterstitial!
+    var supermarketGlobal : Supermarket!
+
     @IBOutlet var SupermarketTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        interstitial = createAndLoadInterstitial()
+        let request = GADRequest()
+        interstitial.load(request)
         // Do any additional setup after loading the view.
     }
     
@@ -115,10 +122,10 @@ class SupermarketListController: UITableViewController{
                 self.navigationController?.pushViewController(orderViewController, animated: true)
             }
             cell.shoplistTapped={
-                let shoplistViewController = self.storyboard?.instantiateViewController(withIdentifier: "ShoplistViewController") as! ShoplistViewController
-                shoplistViewController.recipe = self.recipe
-                shoplistViewController.supermarket = supermarket
-                self.navigationController?.pushViewController(shoplistViewController, animated: true)
+                self.supermarketGlobal = supermarket
+                self.showAdd()
+
+                
             }
             return cell
         } else {
@@ -128,7 +135,29 @@ class SupermarketListController: UITableViewController{
         
         
     }
-
+    
+    func showAdd(){
+        if interstitial.isReady {
+            interstitial.present(fromRootViewController: self)
+        } else {
+            print("Ad wasn’t ready")
+        }
+        interstitial = createAndLoadInterstitial()
+    }
+    
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        let shoplistViewController = self.storyboard?.instantiateViewController(withIdentifier: "ShoplistViewController") as! ShoplistViewController
+        shoplistViewController.recipe = self.recipe
+        shoplistViewController.supermarket = self.supermarketGlobal
+        self.navigationController?.pushViewController(shoplistViewController, animated: true)
+    }
+    
+    func createAndLoadInterstitial() -> GADInterstitial {
+        let interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        interstitial.delegate = self as? GADInterstitialDelegate
+        interstitial.load(GADRequest())
+        return interstitial
+    }
     /*
     // MARK: - Navigation
 

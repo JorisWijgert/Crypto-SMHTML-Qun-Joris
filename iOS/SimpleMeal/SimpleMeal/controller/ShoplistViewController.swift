@@ -13,11 +13,13 @@ class ShoplistViewController: UITableViewController {
     var recipe:Recipe?
     var supermarket:Supermarket?
     
+    
     @IBOutlet var ShoplistTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         ShoplistTableView.delegate = self
         ShoplistTableView.dataSource = self
+       
         // Do any additional setup after loading the view.
     }
 
@@ -30,6 +32,8 @@ class ShoplistViewController: UITableViewController {
         DispatchQueue.main.async {
             self.ShoplistTableView.reloadData()
         }
+        
+
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,15 +49,6 @@ class ShoplistViewController: UITableViewController {
             return UITableViewCell()
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+    
 }
