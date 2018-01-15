@@ -33,16 +33,16 @@ class RecipeDetailController: UIViewController {
     
     @IBAction func ShareButtonClicked(_ sender: Any) {
         //Alert
-        let alert = UIAlertController(title: "Share", message: "Share the poem of the day!", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Delen", message: "Deel recept: " + recipe!.Name, preferredStyle: .actionSheet)
         //First action
-        let actionOne = UIAlertAction(title: "Share on Facebook", style: .default) { (action) in
+        let actionOne = UIAlertAction(title: "Deel op Facebook", style: .default) { (action) in
             
             //Checking if user is connected to Facebook
             if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook)
             {
                 let post = SLComposeViewController(forServiceType: SLServiceTypeFacebook)!
                 
-                post.setInitialText("Poem of the day")
+                post.setInitialText("Ik ga het recept " + self.recipe!.Name + " maken!")
                 post.add(UIImage(named: "img.png"))
                 
                 self.present(post, animated: true, completion: nil)
@@ -51,14 +51,14 @@ class RecipeDetailController: UIViewController {
         }
         
         //Second action
-        let actionTwo = UIAlertAction(title: "Share on Twitter", style: .default) { (action) in
+        let actionTwo = UIAlertAction(title: "Deel op Twitter", style: .default) { (action) in
             
             //Checking if user is connected to Facebook
             if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter)
             {
                 let post = SLComposeViewController(forServiceType: SLServiceTypeTwitter)!
                 
-                post.setInitialText("Poem of the day")
+                post.setInitialText("Ik ga het recept " + self.recipe!.Name + " maken!")
                 post.add(UIImage(named: "img.png"))
                 
                 self.present(post, animated: true, completion: nil)
@@ -66,7 +66,7 @@ class RecipeDetailController: UIViewController {
             } else {self.showAlert(service: "Twitter")}
         }
         
-        let actionThree = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let actionThree = UIAlertAction(title: "Annuleren", style: .cancel, handler: nil)
         
         //Add action to action sheet
         alert.addAction(actionOne)
