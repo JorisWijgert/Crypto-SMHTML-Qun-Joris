@@ -369,10 +369,8 @@ of iets</string>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jK-Sv-lbl">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jK-Sv-lbl">
                                         <rect key="frame" x="133" y="286" width="109" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Deel recept"/>
                                         <connections>
                                             <action selector="ShareButtonClicked:" destination="vTo-Vv-5la" eventType="touchUpInside" id="G91-hh-3a8"/>
@@ -462,22 +460,22 @@ of iets</string>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AuQ-Ge-Khv">
-                                            <rect key="frame" x="194" y="6" width="100" height="100"/>
+                                        <button opaque="NO" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AuQ-Ge-Khv">
+                                            <rect key="frame" x="194" y="6" width="34" height="34"/>
                                             <state key="normal" image="100x100Home"/>
                                             <connections>
                                                 <action selector="deliverClicked:" destination="hjA-sH-fQP" eventType="touchUpInside" id="wXU-Zb-NCG"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8c-Nt-1ne">
-                                            <rect key="frame" x="269" y="6" width="100" height="100"/>
+                                        <button opaque="NO" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8c-Nt-1ne">
+                                            <rect key="frame" x="269" y="6" width="35" height="35"/>
                                             <state key="normal" image="100x100tasks"/>
                                             <connections>
                                                 <action selector="shoplistClicked:" destination="hjA-sH-fQP" eventType="touchUpInside" id="wGn-7D-CV0"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPe-Zw-yna">
-                                            <rect key="frame" x="229" y="6" width="100" height="100"/>
+                                        <button opaque="NO" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPe-Zw-yna">
+                                            <rect key="frame" x="229" y="6" width="35" height="35"/>
                                             <state key="normal" image="100x100Shoppingcart"/>
                                             <connections>
                                                 <action selector="pickupClicked:" destination="hjA-sH-fQP" eventType="touchUpInside" id="8Hg-HD-rRO"/>
@@ -485,14 +483,14 @@ of iets</string>
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="HPe-Zw-yna" secondAttribute="trailing" constant="46" id="QVc-1b-ijB"/>
+                                        <constraint firstAttribute="trailing" secondItem="HPe-Zw-yna" secondAttribute="trailing" constant="111" id="QVc-1b-ijB"/>
                                         <constraint firstItem="h8c-Nt-1ne" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4zN-5o-9Ky" secondAttribute="leading" id="diB-E5-oD7"/>
-                                        <constraint firstAttribute="trailing" secondItem="h8c-Nt-1ne" secondAttribute="trailing" constant="6" id="eEa-Ml-Rev"/>
+                                        <constraint firstAttribute="trailing" secondItem="h8c-Nt-1ne" secondAttribute="trailing" constant="71" id="eEa-Ml-Rev"/>
                                         <constraint firstItem="HPe-Zw-yna" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4zN-5o-9Ky" secondAttribute="leading" id="gn8-6y-kUK"/>
                                         <constraint firstItem="HPe-Zw-yna" firstAttribute="top" secondItem="4zN-5o-9Ky" secondAttribute="top" constant="6" id="oL4-xj-eoo"/>
                                         <constraint firstItem="AuQ-Ge-Khv" firstAttribute="top" secondItem="4zN-5o-9Ky" secondAttribute="top" constant="6" id="pXn-1v-T1l"/>
                                         <constraint firstItem="AuQ-Ge-Khv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4zN-5o-9Ky" secondAttribute="leading" id="uxr-Or-2VS"/>
-                                        <constraint firstAttribute="trailing" secondItem="AuQ-Ge-Khv" secondAttribute="trailing" constant="81" id="x2y-F6-Zoa"/>
+                                        <constraint firstAttribute="trailing" secondItem="AuQ-Ge-Khv" secondAttribute="trailing" constant="147" id="x2y-F6-Zoa"/>
                                         <constraint firstItem="h8c-Nt-1ne" firstAttribute="top" secondItem="4zN-5o-9Ky" secondAttribute="top" constant="6" id="zh4-Cd-gz4"/>
                                     </constraints>
                                 </tableViewCellContentView>
