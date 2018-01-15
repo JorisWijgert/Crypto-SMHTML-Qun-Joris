@@ -369,9 +369,11 @@ of iets</string>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jK-Sv-lbl">
-                                        <rect key="frame" x="258" y="156" width="109" height="30"/>
-                                        <state key="normal" title="Share on twitter"/>
+
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jK-Sv-lbl">
+                                        <rect key="frame" x="133" y="286" width="109" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Deel recept"/>
                                         <connections>
                                             <action selector="ShareButtonClicked:" destination="vTo-Vv-5la" eventType="touchUpInside" id="G91-hh-3a8"/>
                                         </connections>
