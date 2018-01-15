@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ProductCell : UITableViewCell {
     @IBOutlet weak var ProductNameLabel: UILabel!
@@ -16,21 +17,27 @@ class ProductCell : UITableViewCell {
     }
 }
 
-class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
     @IBOutlet weak var SupermarketLabel: UILabel!
     @IBOutlet weak var RecipeNameLabel: UILabel!
     @IBOutlet weak var ProductTableView: UITableView!
     
+    let manager = CLLocationManager()
     var recipe:Recipe?
     var supermarket:Supermarket?
-    
+    var startLocation: CLLocation!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         SupermarketLabel.text = supermarket?.Name
         RecipeNameLabel.text = recipe?.Name
         ProductTableView.delegate = self
         ProductTableView.dataSource = self
-        // Do any additional setup after loading the view.
+        //Load location service
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -42,6 +49,12 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        startLocation = locations[0]
+        let supermarketLocation = CLLocation(latitude: (supermarket?.Latitude)!, longitude: (supermarket?.Longitude)!)
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
