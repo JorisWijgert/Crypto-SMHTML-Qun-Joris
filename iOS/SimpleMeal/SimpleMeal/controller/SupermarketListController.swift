@@ -60,7 +60,7 @@ class SupermarketTableViewCell: UITableViewCell {
     
 }
 
-class SupermarketListController: UITableViewController{
+class SupermarketListController: UITableViewController, GADInterstitialDelegate{
 
     var recipe:Recipe?
     var supermarkets=[Supermarket]()
@@ -74,6 +74,8 @@ class SupermarketListController: UITableViewController{
         interstitial = createAndLoadInterstitial()
         let request = GADRequest()
         interstitial.load(request)
+        interstitial.delegate = self
+
         // Do any additional setup after loading the view.
     }
     
@@ -145,12 +147,13 @@ class SupermarketListController: UITableViewController{
         interstitial = createAndLoadInterstitial()
     }
     
-    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+    /// Tells the delegate the interstitial is to be animated off the screen.
+    func interstitialWillDismissScreen(_ ad: GADInterstitial) {
         let shoplistViewController = self.storyboard?.instantiateViewController(withIdentifier: "ShoplistViewController") as! ShoplistViewController
         shoplistViewController.recipe = self.recipe
         shoplistViewController.supermarket = self.supermarketGlobal
-        self.navigationController?.pushViewController(shoplistViewController, animated: true)
-    }
+        self.navigationController?.pushViewController(shoplistViewController, animated: true)    }
+    
     
     func createAndLoadInterstitial() -> GADInterstitial {
         let interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
